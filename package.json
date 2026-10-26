@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@types/node": "^26.6.5",
+    "global": "^4.4.0",
+    "ts-node": "^10.9.2",
+    "tslint-config-airbnb": "^5.11.2",
+    "typescript": "^7.0.2"
+  },
+  "devDependencies": {
+    "tslint": "^6.1.3"
+  }
+}
