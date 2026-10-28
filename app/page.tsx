@@ -67,12 +67,12 @@
 //     </div>
 //   );
 // }
-export default function Home() {
+export default function Home() {  //default가 들어있는 함수를 반드시 실행 시킴  
   return (
-    // React.Fr
+    // React.Fragment: DOM 트리를 하나로 만들기 위한 태그 
     <>
-      <>heiio, wrid!</>
-      <>heiio, wrid!</>
+      <p>Hello, world!</p>
+      <p>Hello, world!</p>
     </>
   )
 }
