@@ -21,8 +21,8 @@ export const metadata : Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className={`${pretendard.variable}`}>
+      <body className="font-pretendard">{children}</body>
     </html>
   );
 }

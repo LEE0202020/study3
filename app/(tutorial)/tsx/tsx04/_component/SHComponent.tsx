@@ -1,6 +1,5 @@
-// 컴포넌트 분리 
-export default function page() {
+export default function ShComponent() {
     return (
-            <p>오승현</p>
+       <p>오승현</p>
     );
 }

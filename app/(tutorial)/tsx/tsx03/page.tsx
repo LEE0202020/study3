@@ -2,6 +2,7 @@
 // 19세 이상 성인이라면 "입장 가능"
 // 성인이 아니라면 "입장 불가"
 // 성인과 관계 없이 age가 짝수라면 "당첨"을 출력
+import { JSX } from "react/jsx-runtime";
 
 export default function page() {
 
@@ -10,8 +11,8 @@ export default function page() {
     const isAdult: boolean = age >= 19
     const isEven: boolean = age % 2 === 0
 
-    const passComponent = (<span>{pass}</span>)
-    const notPassComponent = (<span>{notPass}</span>)
+    const passComponent: React.ReactNode = (<span>{pass}</span>)
+    const notPassComponent: JSX.Element = (<span>{notPass}</span>)
     const luckyComponent = (<span>{lucky}</span>)
     const unLuckyComponent = (<span>{unLucky}</span>)
 
