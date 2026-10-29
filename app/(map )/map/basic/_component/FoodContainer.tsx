@@ -1,3 +1,5 @@
+import Food from "./Food";
+
 export default function FoodContainer() {
 
     const foods = [
@@ -33,7 +35,7 @@ export default function FoodContainer() {
     // map
     // Food컴포넌트로 리스트 Props로 분리하기
     const foodList = foods.map((food, i) => (
-        <li key={i}>{food.name}</li>
+        <Food key={i} food={food} />
     ))
 
     return (

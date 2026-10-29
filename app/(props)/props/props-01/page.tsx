@@ -1,9 +1,10 @@
-import ChildrenContainer from "./_component/ChildrenContainer";
+import Parent from "./_component/Parent";
 
 export default function page() {
+
     return (
         <>
-            <ChildrenContainer />
+            <Parent />
         </>
     );
 }

@@ -1,13 +1,14 @@
-import child from "./Child";
+import Child from "./Child";
 
 export default function Parent() {
-
+    
     const name: string = "홍길동"
-    const name: string = "010-1234-5678"
+    const phone: string = "010-1234-1234"
+
     return (
         <>
-            부모 태그
-            <Child name = {name} phone={phone}/>
+            부모 태그!😎
+            <Child name={name} phone={phone} />
         </>
     );
 }

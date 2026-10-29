@@ -1,3 +1,5 @@
+import Student from "./_component/Student";
+
 export default function page() {
 
     // 다음은 학생의 출석부이다
@@ -5,7 +7,7 @@ export default function page() {
     // 컴포넌트로 출력하고 이름을 파란색, 글자크기를 "20px"로 변경하기
     // 단, style은 Container에 선언한다.
     const attendanceData = [
-        { id: 1, name: "인덱승현", isPresent: true,  },
+        { id: 1, name: "인덱승현", isPresent: true, },
         { id: 2, name: "김희수", isPresent: false, },
         { id: 3, name: "조수민", isPresent: true, },
         { id: 4, name: "박지호", isPresent: false, },
@@ -22,7 +24,7 @@ export default function page() {
     ];
 
     const attendanceList = attendanceData
-        .fillter(({isPresent})isPresent)
+        .filter(({isPresent}) => isPresent)
         .map((student, i) => (
             <Student key={i} student={student} />
         ))

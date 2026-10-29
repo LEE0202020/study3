@@ -10,8 +10,10 @@ export const metadata : Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${pretendard.variable}`}>
-      <body className="font-pretendard">{children}</body>
+    <html lang="en" className={cn(pretendard.variable, "front-sana", Geist.variable)}>
+      <body className="font-pretendard">
+        {children}
+      </body>
     </html>
   );
 }
