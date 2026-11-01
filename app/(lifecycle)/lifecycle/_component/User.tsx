@@ -2,12 +2,14 @@ import type { User } from "./UserContainer";
 
 interface userProps {
     user: User
-} // 타입 검증 
+}  // 타입검증 
 
 export default function User({user}: userProps) {
-    const {name} = user;
+    const {name, email} = user;
 
     return (
-        <li>{name}</li>
+        <li>
+            <p>정보: {name}({email})</p>
+        </li>
     );
 }

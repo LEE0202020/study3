@@ -1,3 +1,5 @@
+import Food from "./Food";
+
 export default function FoodContainer() {
 
     const foods = [
@@ -30,10 +32,10 @@ export default function FoodContainer() {
     //     document.querySelector("ul")?.appendChild(li)
     // })
 
-    // map
+    // map : 배열의 모든 요소를 하나씩 꺼내서 새로운 배열을 만드는 JavaScript 메서드
     // Food컴포넌트로 리스트 Props로 분리하기
     const foodList = foods.map((food, i) => (
-        <li key={i}>{food.name}</li>
+        <Food key={i} food={food} />
     ))
 
     return (

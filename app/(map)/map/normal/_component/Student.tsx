@@ -1,16 +1,21 @@
 interface Student {
-    id:number;
+    id: number;
     name: string;
-    isPresent:  boolean;
-}
-interface Studentprops {
-    student:student;
+    isPresent: boolean;
 }
 
-export detault function Student({student};StudentProps) {
+interface StudentProps {
+    student: Student;
+}
+
+export default function Student({student}: StudentProps) {
     const {id, name, isPresent} = student;
 
     return (
-        
-    )
+        <li className="text-[20px]">
+            <p>번호: {id}</p>
+            <p className="text-blue-500">이름: {name}</p>
+            <p>출석 여부: {isPresent && "출석"}</p>
+        </li>
+    );
 }

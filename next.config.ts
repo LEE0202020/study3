@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   experimental: {
     agentFeedback: true,
   },
+  reactStrictMode: false, // 테스트 모드
   cacheComponents: true,
   partialPrefetching: true,
   devIndicators: false,
@@ -16,6 +17,14 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  images: {
+     remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
+  }
 };
 
 export default nextConfig;
