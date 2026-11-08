@@ -30,7 +30,7 @@ export default function page() {
             todos.map(
                 // todo와 index값을 같이 넘김   // todo를 가지고 와서 done에 있는 값을 todo의 done을 반대로 바꿈
                 (todo, i) => i === index ? {...todo, done: !todo.done} : todo// 인덱스 값이 어떤건지 비교해서 검사해야됨 
-            )  // 리턴이 없는 함숭는 void임 
+            )  // 리턴이 없는 함수는 void임 
         )
     }
 

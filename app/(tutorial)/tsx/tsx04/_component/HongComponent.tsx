@@ -1,7 +1,5 @@
 export default function page() {
     return (
-        <p>
-            홍길동
-        </p>
+        <p>홍길동</p>
     );
 }

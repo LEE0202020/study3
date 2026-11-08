@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import "./globals.css";
 import "@/style/tailwind/tailwind.theme.css"
-import { pretendard } from "@/style/fonts/font";
+
+import { pretendard } from "@/style/font/font";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 import ReactQueryProvider from "@/provider/ReactQueryProvider";
@@ -9,8 +10,8 @@ import ReactQueryProvider from "@/provider/ReactQueryProvider";
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
-  title: "Next Project test",
-  description: "Next 기초"
+  title: "Next Project",
+  description: "재밌게 공부하는 Next 16!",
 }
 
 export default function RootLayout({ children, modal }: LayoutProps<"/">) {

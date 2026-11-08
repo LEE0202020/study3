@@ -8,6 +8,7 @@ export interface Todo {
 export interface TodoContainerProps {
     todos: Todo[],
     toggleDone/*함수*/: (index: number) => void;
+    // 인덱스를 받아서 void로 바꾸는 함수 
 }
 
 export default function TodoContainer(props: TodoContainerProps) {

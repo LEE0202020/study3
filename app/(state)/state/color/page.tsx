@@ -11,6 +11,7 @@ export default function page() {
     }
 
     return (
+        /* {{ }} : javaScript 값을 넣고 css스타일을 담은 객체*/
         <>
             <h1 style={{color}}>색상 적용 대상!😎</h1>
             <div>

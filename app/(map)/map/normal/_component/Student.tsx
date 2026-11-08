@@ -15,7 +15,8 @@ export default function Student({student}: StudentProps) {
         <li className="text-[20px]">
             <p>번호: {id}</p>
             <p className="text-blue-500">이름: {name}</p>
-            <p>출석 여부: {isPresent && "출석"}</p>
+            <p>출석 여부: {isPresent && "출석"}</p> 
         </li>
+            /* && : 그리고(and) \ isPresent = True-> '출력' ,isPresent = Felse -> ''-> */
     );
 }

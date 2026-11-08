@@ -6,8 +6,8 @@ interface ChildProps {
     name: string;
     phone: string;
 }
-
-// 구조분해할당 가능
+                                // (주기전에 받을 준비!)
+// 구조분해할당 가능                //받을 곳을 여기밖에 없음 !!
 export default function Child({name, phone}: ChildProps) {
     // console.log("props", props)
 

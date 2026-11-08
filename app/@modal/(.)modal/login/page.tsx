@@ -1,4 +1,4 @@
-export default function page() {
+ export default function page() {
     return (
         <>
             <div className="fixed inset-0 bg-black/50 z-10"></div>

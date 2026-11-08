@@ -6,13 +6,14 @@
 // items-: align-items
 // bg: background-color
 export default function page() {
+    /*수치는 4배수로 함 */
     return (
-        <>
+        <> 
             <div 
                 className="
                     w-125 h-125 border-3 border-green-500 flex justify-center items-center gap-1
                 "
-            >
+            > 
                 <div className="w-[101px] h-25 bg-amber-300"></div>
                 <div className="w-25.25 h-25 bg-amber-300"></div>
                 <div className="w-25.25 h-25 bg-amber-300"></div>
