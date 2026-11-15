@@ -1,0 +1,187 @@
+참조 투명성
+	 - 입력을 받아서 입력받은 그대로 출력하는 함수를 참조가 투명하다고 하며 순수 함수(pure function)라고 한다. 
+	하지만 입력을 받았을 때 다른 결과로 출력하거나 외부 함수에 영향을 끼치는 함수를 참조 불투명하다고 한다. 
+	이렇게 순수 함수가 아닌 함수에서 Side-effect가 발생한다. 리액트는 모든 함수를 순수 함수로 유지할 것을 권장하고 있으며, 
+	이로 인해 컴포넌트 재사용이 좋아지고 오류 검사 및 테스트도 좋아진다
+
+useEffect
+	- Side-Effect를 따로 관리하여 컴포넌트가 최대한 순수 함수를 유지할 수 있도록 도와주는 함수
+	- useEffect()는 랜더링이 모두 끝난 다음에 실행된다.
+
+	1) 랜더링 될 때 마다 실행
+		- useEffect( () ⇒ {})
+	2) 최초 랜더링(마운트)할 때만 실행
+		- useEffect( () ⇒ {} , [])
+		- 즉 비워 놓으면 최초 한번만 아예 전달한게 없으니 평생 리랜더링 될 수 없다.
+		- 즉 === componentDidMount()와 똑같다.
+	3) 특정 컴포넌트 변경 시 실행
+		- useEffect( () ⇒ {} , [state])
+
+
+
+앱 라우팅(App Routing)
+	- app에 존재하는 하위폴더를 URL(Uniform Resource Identifier)와 맵핑합니다.
+	예를 들어 app의 하위 폴더에 test라는 폴더가 있다면 localhost:3000/test로 요청하면 됩니다.
+	단, 폴더에 있는 page.tsx 파일과 매핑되므로 이름은 변경할 수 없지만, 
+	폴더 내부에서 어떤 이름을 사용하더라도 상관이 없다. 따라서 hook 함수를 사용할 때
+	앞글자를 대문자로 사용해야하는 규칙을 준수하여 사용할 수 있습니다.
+	
+라우트 그룹(Route Groups)
+	- 폴더 이름을 괄호로 감싸는 형태(예: (auth), (shop))로 디렉터리를 구성하는 방식을 말합니다.
+	라우트 그룹 폴더명은 실제 URL 주소에 전혀 포함되지 않습니다. 또한 그룹별로 각각의 layout.tsx를 따로 둘 수 있어, 
+	특정 그룹끼리만 공통 레이아웃(예: 사이드바가 있는 관리자 화면 vs 기본 쇼핑몰 화면)을 다르게 적용할 때 매우 유용하게 쓰입니다.
+
+다이나믹 라우팅(Dynamic Routing)
+	- Next.js에서는 폴더 이름이나 파일 이름을 대괄호([ ])로 감싸서 다이나믹 라우트를 생성합니다.
+	app/posts/[id]/page.tsx와 같이 구조를 만들면, 브라우저에서 /posts/1, /posts/abc 등 어떤 값이 들어오든
+	이 페이지 컴포넌트가 호출됩니다. 특히 최신 Next.js 환경(App Router)에서는 성능 최적화와 비동기 처리를 위해
+	params가 Promise 형태로 전달되므로, async/await를 사용해 const { id } = await params; 형태로 값을 추출하여
+	데이터베이스 조회나 API 호출에 곧바로 활용합니다.
+
+================================================================================
+
+REST API(Representaional State Transfer API)
+	HTTP URI(Uniform Resource Identifier)를 통해 자원을 명시할 수 있어야 한다.
+	HTTP Method(GET, POST, PUT, PATCH, DELETE 등)를 통해 해당 자원에 대한
+	CRUD를 적용한다.
+
+REST API 설계 방식 // 회사마다 다르다
+	1. URI는 동사가 아닌 명사, 대문자가 아닌 소문자로 사용해야 한다.
+		잘못된 예시: http://app.com/Writing
+		올바른 예시: http://app.com/write
+
+	2. 마지막에 슬래시를 작성하지 않는다.
+		잘못된 예시: http://app.com/api/post/1/
+		올바른 예시: http://app.com/api/post/1
+
+	3. 언더바 대신 하이폰을 작성한다.
+		잘못된 예시: http://app.com/api/fruit_info
+		올바른 예시: http://app.com/api/fruit-info
+
+	4. 확장자를 포함시키지 않는다.
+		잘못된 예시: http://app.com/api/fruit.png		
+		올바른 예시: http://app.com/api/fruit
+
+	5. 동작을 포함시키지 않는다.
+		잘못된 예시: http://app.com/api/do-read/1
+		올바른 예시: http://app.com/api/posts/1
+
+RESTful
+	REST 원칙을 따르는 시스템을 의미한다.
+	REST방식으로 설계했을지라도 설계 원칙 및 규칙을 정확하게 지킨 시스템만이 RESTful하다고 말한다.
+
+CORS(Cross Origin Resource Sharing)
+	프로토콜, 도메인, 포트 번호가 하나라도 다르면 발생한다.
+  세션을 탈취하여 악의적으로 정보를 추출하거나
+  다른 사람의 정보를 입력하는 등 공격할 수 있기 때문에,
+  브라우저에서 이를 보호하고 Cross-Origin이 필요한 경우 따로 설정이 필요하다.
+
+  서버가 응답할 때 브라우저가 요청한 Origin과
+  응답한 헤더 Access-Control-Request-Headers의 값을 비교하여
+  유효한 요청이라면 리소스를 응답한다.
+  만약 유효하지 않은 요청이라면 브라우저에서 이를 막고 에러가 발생한다.
+    
+- origin : url에서 uri를 제외한 것이 origin이라고 한다. 하나의 로컬 서버에서는 
+origin이 동일해야 하며, 이 origin이 요청하는 것은 요청할 수 있도록 정책을 변경하여 설정해야하는데
+배포 환경에서는 달라질 수 있으므로 기본 설정해주는 방법과 브라우저에서 설정해주는 방법을 사용해서 정책을 변경할 수 있다.
+
+
+=================================================================================
+리액트 쿼리(React-Query, TanStack Query)
+	- 서버로부터 데이터 가져오기, 데이터 캐싱, 캐시 제어 등 데이터를 쉽고 
+	효율적으로 관리할 수 있는 라이브러리이다. v4부터 Vue나 Svelte 등의 
+	다른 프레임워크에서도 활용할 수 있도록 기능이 확장되며 TanStack Query라는 이름으로 변경되었다.
+	- 주로 대규모 프로젝트에 데이터 캐싱을 관리하기 위해 사용된다
+	- https://tanstack.com/query/latest/docs/framework/react/overview
+
+[설치 명령어]
+	> yarn add @tanstack/react-query
+	> yarn add -D @tanstack/react-query-devtools
+	
+
+리액트 쿼리의 주요 기능
+	- 데이터 가져오기 및 캐싱
+	- 동일 요청의 중복 제거
+	- 신선한 데이터 유지
+	- 무한 스크롤, 페이지네이션 등의 성능 최적화
+	- 네트워크 재연결, 요청 실패 등의 자동 갱신
+
+리액트 쿼리 주요 동작 설명
+1. queryKey
+	- TanStack Query를 활용해서 데이터를 가져올 때는 항상 쿼리 키(queryKey)를 지정한다.
+	이 쿼리 키는 캐시된 데이터와 비교해 새로운 데이터를 가져올지, 캐시된 데이터를 사용할지 결정하는 기준이 된다
+	즉, 일치하는 Key가 없다면 새로운 데이터를 불러온다. 반대로 Key가 있다면 요청하지 않고 캐시된 데이터를 불러온다.
+	
+2. staleTime
+	- 데이터의 신선도*를 관리한다. 캐시된 데이터가 신선하다면 캐시된 데이터를 사용하고, 
+	만약 데이터가 상했다면(Stale) 서버에 다시 요청해 신선한(Frash) 데이터를 가져온다
+	
+3. queryClient
+	- React Query의 캐시 관리자 객체이여, useQuery, useMutation 등 캐시를 관리하는 객체이다.
+
+4. QueryClientProvider
+	- queryClient를 제공하는 Context이다.
+	
+5. useQuery
+	- const 반환 = useQuery(옵션)
+	
+6. useQuery 주요 옵션 정리
+	- queryKey (필수): 쿼리를 식별하는 고유 키. 배열 형태로 지정
+	ex) ['user', id]
+
+	- queryFn (필수): 데이터를 가져오는 비동기 함수 (Promise 반환 필수)
+	ex) () => fetchUser(id)
+
+	- enabled: 쿼리 자동 실행 여부
+	false일 경우 수동 실행만 가능
+	ex) enabled: !!id
+
+	- staleTime: 데이터가 “신선”하다고 간주되는 시간(ms)
+	ex) staleTime: 5 * 60 * 1000  // 5분
+
+	- cacheTime (gcTime): 비활성 쿼리가 캐시에 유지되는 시간(ms)
+	ex) cacheTime: 10 * 60 * 1000  // 10분
+
+	- refetchOnWindowFocus: 브라우저 포커스 시 자동 재요청 여부
+	ex) refetchOnWindowFocus: false
+
+	- refetchOnReconnect: 네트워크 재연결 시 자동 재요청 여부
+	ex) refetchOnReconnect: true
+
+	- refetchOnMount: 컴포넌트 마운트 시 자동 재요청 여부
+	ex) refetchOnMount: false
+
+	- retry: 실패 시 재시도 횟수
+	ex) retry: 1  // 한 번만 재시도
+	ex) retry: false  // 재시도 비활성화
+
+	- select: 가져온 데이터 중 필요한 부분만 선택
+	ex) select: (data) => data.result
+
+	- placeholderData: 로딩 중에 임시로 보여줄 데이터
+	ex) placeholderData: { name: '로딩 중...' }
+
+	- initialData: 쿼리 실행 전 기본 데이터 (SSR 등에서 유용)
+	ex) initialData: { id: 1, name: '기존 유저' }
+
+	- refetchInterval: 주기적으로 데이터 자동 갱신(ms)
+	ex) refetchInterval: 10000  // 10초마다 갱신
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

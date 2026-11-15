@@ -1,0 +1,2157 @@
+{\rtf1\ansi\ansicpg949\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset129 AppleSDGothicNeo-Regular;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 REST API(Representaional State Transfer API)\
+   HTTP URI(Uniform Resource Identifier)
+\f1 \'b8\'a6
+\f0  
+\f1 \'c5\'eb\'c7\'d8
+\f0  
+\f1 \'c0\'da\'bf\'f8\'c0\'bb
+\f0  
+\f1 \'b8\'ed\'bd\'c3\'c7\'d2
+\f0  
+\f1 \'bc\'f6
+\f0  
+\f1 \'c0\'d6\'be\'ee\'be\'df
+\f0  
+\f1 \'c7\'d1\'b4\'d9
+\f0 .\
+   HTTP Method(GET, POST, PUT, PATCH, DELETE 
+\f1 \'b5\'ee
+\f0 )
+\f1 \'b8\'a6
+\f0  
+\f1 \'c5\'eb\'c7\'d8
+\f0  
+\f1 \'c7\'d8\'b4\'e7
+\f0  
+\f1 \'c0\'da\'bf\'f8\'bf\'a1
+\f0  
+\f1 \'b4\'eb\'c7\'d1
+\f0 \
+   CRUD
+\f1 \'b8\'a6
+\f0  
+\f1 \'c0\'fb\'bf\'eb\'c7\'d1\'b4\'d9
+\f0 .\
+\
+yarn add @tanstack/react-query\
+yarn add -D @tanstack/react-query-devtools\
+\
+\
+REST API 
+\f1 \'bc\'b3\'b0\'e8
+\f0  
+\f1 \'b9\'e6\'bd\'c4
+\f0  // 
+\f1 \'c8\'b8\'bb\'e7\'b8\'b6\'b4\'d9
+\f0  
+\f1 \'b4\'d9\'b8\'a3\'b4\'d9
+\f0 \
+   1. URI
+\f1 \'b4\'c2
+\f0  
+\f1 \'b5\'bf\'bb\'e7\'b0\'a1
+\f0  
+\f1 \'be\'c6\'b4\'d1
+\f0  
+\f1 \'b8\'ed\'bb\'e7
+\f0 , 
+\f1 \'b4\'eb\'b9\'ae\'c0\'da\'b0\'a1
+\f0  
+\f1 \'be\'c6\'b4\'d1
+\f0  
+\f1 \'bc\'d2\'b9\'ae\'c0\'da\'b7\'ce
+\f0  
+\f1 \'bb\'e7\'bf\'eb\'c7\'d8\'be\'df
+\f0  
+\f1 \'c7\'d1\'b4\'d9
+\f0 .\
+      
+\f1 \'c0\'df\'b8\'f8\'b5\'c8
+\f0  
+\f1 \'bf\'b9\'bd\'c3
+\f0 : http://app.com/Writing\
+      
+\f1 \'bf\'c3\'b9\'d9\'b8\'a5
+\f0  
+\f1 \'bf\'b9\'bd\'c3
+\f0 : http://app.com/write\
+\
+   2. 
+\f1 \'b8\'b6\'c1\'f6\'b8\'b7\'bf\'a1
+\f0  
+\f1 \'bd\'bd\'b7\'a1\'bd\'c3\'b8\'a6
+\f0  
+\f1 \'c0\'db\'bc\'ba\'c7\'cf\'c1\'f6
+\f0  
+\f1 \'be\'ca\'b4\'c2\'b4\'d9
+\f0 .\
+      
+\f1 \'c0\'df\'b8\'f8\'b5\'c8
+\f0  
+\f1 \'bf\'b9\'bd\'c3
+\f0 : http://app.com/api/post/1/\
+      
+\f1 \'bf\'c3\'b9\'d9\'b8\'a5
+\f0  
+\f1 \'bf\'b9\'bd\'c3
+\f0 : http://app.com/api/post/1\
+\
+   3. 
+\f1 \'be\'f0\'b4\'f5\'b9\'d9
+\f0  
+\f1 \'b4\'eb\'bd\'c5
+\f0  
+\f1 \'c7\'cf\'c0\'cc\'c6\'f9\'c0\'bb
+\f0  
+\f1 \'c0\'db\'bc\'ba\'c7\'d1\'b4\'d9
+\f0 .\
+      
+\f1 \'c0\'df\'b8\'f8\'b5\'c8
+\f0  
+\f1 \'bf\'b9\'bd\'c3
+\f0 : http://app.com/api/fruit_info\
+      
+\f1 \'bf\'c3\'b9\'d9\'b8\'a5
+\f0  
+\f1 \'bf\'b9\'bd\'c3
+\f0 : http://app.com/api/fruit-info\
+\
+   4. 
+\f1 \'c8\'ae\'c0\'e5\'c0\'da\'b8\'a6
+\f0  
+\f1 \'c6\'f7\'c7\'d4\'bd\'c3\'c5\'b0\'c1\'f6
+\f0  
+\f1 \'be\'ca\'b4\'c2\'b4\'d9
+\f0 .\
+      
+\f1 \'c0\'df\'b8\'f8\'b5\'c8
+\f0  
+\f1 \'bf\'b9\'bd\'c3
+\f0 : http://app.com/api/fruit.png      \
+      
+\f1 \'bf\'c3\'b9\'d9\'b8\'a5
+\f0  
+\f1 \'bf\'b9\'bd\'c3
+\f0 : http://app.com/api/fruit\
+\
+   5. 
+\f1 \'b5\'bf\'c0\'db\'c0\'bb
+\f0  
+\f1 \'c6\'f7\'c7\'d4\'bd\'c3\'c5\'b0\'c1\'f6
+\f0  
+\f1 \'be\'ca\'b4\'c2\'b4\'d9
+\f0 .\
+      
+\f1 \'c0\'df\'b8\'f8\'b5\'c8
+\f0  
+\f1 \'bf\'b9\'bd\'c3
+\f0 : http://app.com/api/do-read/1\
+      
+\f1 \'bf\'c3\'b9\'d9\'b8\'a5
+\f0  
+\f1 \'bf\'b9\'bd\'c3
+\f0 : http://app.com/api/posts/1\
+\
+RESTful\
+   REST 
+\f1 \'bf\'f8\'c4\'a2\'c0\'bb
+\f0  
+\f1 \'b5\'fb\'b8\'a3\'b4\'c2
+\f0  
+\f1 \'bd\'c3\'bd\'ba\'c5\'db\'c0\'bb
+\f0  
+\f1 \'c0\'c7\'b9\'cc\'c7\'d1\'b4\'d9
+\f0 .\
+   REST
+\f1 \'b9\'e6\'bd\'c4\'c0\'b8\'b7\'ce
+\f0  
+\f1 \'bc\'b3\'b0\'e8\'c7\'df\'c0\'bb\'c1\'f6\'b6\'f3\'b5\'b5
+\f0  
+\f1 \'bc\'b3\'b0\'e8
+\f0  
+\f1 \'bf\'f8\'c4\'a2
+\f0  
+\f1 \'b9\'d7
+\f0  
+\f1 \'b1\'d4\'c4\'a2\'c0\'bb
+\f0  
+\f1 \'c1\'a4\'c8\'ae\'c7\'cf\'b0\'d4
+\f0  
+\f1 \'c1\'f6\'c5\'b2
+\f0  
+\f1 \'bd\'c3\'bd\'ba\'c5\'db\'b8\'b8\'c0\'cc
+\f0  RESTful
+\f1 \'c7\'cf\'b4\'d9\'b0\'ed
+\f0  
+\f1 \'b8\'bb\'c7\'d1\'b4\'d9
+\f0 .\
+\
+CORS(Cross Origin Resource Sharing)\
+   
+\f1 \'c7\'c1\'b7\'ce\'c5\'e4\'c4\'dd
+\f0 , 
+\f1 \'b5\'b5\'b8\'de\'c0\'ce
+\f0 , 
+\f1 \'c6\'f7\'c6\'ae
+\f0  
+\f1 \'b9\'f8\'c8\'a3\'b0\'a1
+\f0  
+\f1 \'c7\'cf\'b3\'aa\'b6\'f3\'b5\'b5
+\f0  
+\f1 \'b4\'d9\'b8\'a3\'b8\'e9
+\f0  
+\f1 \'b9\'df\'bb\'fd\'c7\'d1\'b4\'d9
+\f0 .\
+  
+\f1 \'bc\'bc\'bc\'c7\'c0\'bb
+\f0  
+\f1 \'c5\'bb\'c3\'eb\'c7\'cf\'bf\'a9
+\f0  
+\f1 \'be\'c7\'c0\'c7\'c0\'fb\'c0\'b8\'b7\'ce
+\f0  
+\f1 \'c1\'a4\'ba\'b8\'b8\'a6
+\f0  
+\f1 \'c3\'df\'c3\'e2\'c7\'cf\'b0\'c5\'b3\'aa
+\f0 \
+  
+\f1 \'b4\'d9\'b8\'a5
+\f0  
+\f1 \'bb\'e7\'b6\'f7\'c0\'c7
+\f0  
+\f1 \'c1\'a4\'ba\'b8\'b8\'a6
+\f0  
+\f1 \'c0\'d4\'b7\'c2\'c7\'cf\'b4\'c2
+\f0  
+\f1 \'b5\'ee
+\f0  
+\f1 \'b0\'f8\'b0\'dd\'c7\'d2
+\f0  
+\f1 \'bc\'f6
+\f0  
+\f1 \'c0\'d6\'b1\'e2
+\f0  
+\f1 \'b6\'a7\'b9\'ae\'bf\'a1
+\f0 ,\
+  
+\f1 \'ba\'ea\'b6\'f3\'bf\'ec\'c0\'fa\'bf\'a1\'bc\'ad
+\f0  
+\f1 \'c0\'cc\'b8\'a6
+\f0  
+\f1 \'ba\'b8\'c8\'a3\'c7\'cf\'b0\'ed
+\f0  Cross-Origin
+\f1 \'c0\'cc
+\f0  
+\f1 \'c7\'ca\'bf\'e4\'c7\'d1
+\f0  
+\f1 \'b0\'e6\'bf\'ec
+\f0  
+\f1 \'b5\'fb\'b7\'ce
+\f0  
+\f1 \'bc\'b3\'c1\'a4\'c0\'cc
+\f0  
+\f1 \'c7\'ca\'bf\'e4\'c7\'cf\'b4\'d9
+\f0 .\
+\
+  
+\f1 \'bc\'ad\'b9\'f6\'b0\'a1
+\f0  
+\f1 \'c0\'c0\'b4\'e4\'c7\'d2
+\f0  
+\f1 \'b6\'a7
+\f0  
+\f1 \'ba\'ea\'b6\'f3\'bf\'ec\'c0\'fa\'b0\'a1
+\f0  
+\f1 \'bf\'e4\'c3\'bb\'c7\'d1
+\f0  Origin
+\f1 \'b0\'fa
+\f0 \
+  
+\f1 \'c0\'c0\'b4\'e4\'c7\'d1
+\f0  
+\f1 \'c7\'ec\'b4\'f5
+\f0  Access-Control-Request-Headers
+\f1 \'c0\'c7
+\f0  
+\f1 \'b0\'aa\'c0\'bb
+\f0  
+\f1 \'ba\'f1\'b1\'b3\'c7\'cf\'bf\'a9
+\f0 \
+  
+\f1 \'c0\'af\'c8\'bf\'c7\'d1
+\f0  
+\f1 \'bf\'e4\'c3\'bb\'c0\'cc\'b6\'f3\'b8\'e9
+\f0  
+\f1 \'b8\'ae\'bc\'d2\'bd\'ba\'b8\'a6
+\f0  
+\f1 \'c0\'c0\'b4\'e4\'c7\'d1\'b4\'d9
+\f0 .\
+  
+\f1 \'b8\'b8\'be\'e0
+\f0  
+\f1 \'c0\'af\'c8\'bf\'c7\'cf\'c1\'f6
+\f0  
+\f1 \'be\'ca\'c0\'ba
+\f0  
+\f1 \'bf\'e4\'c3\'bb\'c0\'cc\'b6\'f3\'b8\'e9
+\f0  
+\f1 \'ba\'ea\'b6\'f3\'bf\'ec\'c0\'fa\'bf\'a1\'bc\'ad
+\f0  
+\f1 \'c0\'cc\'b8\'a6
+\f0  
+\f1 \'b8\'b7\'b0\'ed
+\f0  
+\f1 \'bf\'a1\'b7\'af\'b0\'a1
+\f0  
+\f1 \'b9\'df\'bb\'fd\'c7\'d1\'b4\'d9
+\f0 .\
+    \
+- origin : url
+\f1 \'bf\'a1\'bc\'ad
+\f0  uri
+\f1 \'b8\'a6
+\f0  
+\f1 \'c1\'a6\'bf\'dc\'c7\'d1
+\f0  
+\f1 \'b0\'cd\'c0\'cc
+\f0  origin
+\f1 \'c0\'cc\'b6\'f3\'b0\'ed
+\f0  
+\f1 \'c7\'d1\'b4\'d9
+\f0 . 
+\f1 \'c7\'cf\'b3\'aa\'c0\'c7
+\f0  
+\f1 \'b7\'ce\'c4\'c3
+\f0  
+\f1 \'bc\'ad\'b9\'f6\'bf\'a1\'bc\'ad\'b4\'c2
+\f0  \
+origin
+\f1 \'c0\'cc
+\f0  
+\f1 \'b5\'bf\'c0\'cf\'c7\'d8\'be\'df
+\f0  
+\f1 \'c7\'cf\'b8\'e7
+\f0 , 
+\f1 \'c0\'cc
+\f0  origin
+\f1 \'c0\'cc
+\f0  
+\f1 \'bf\'e4\'c3\'bb\'c7\'cf\'b4\'c2
+\f0  
+\f1 \'b0\'cd\'c0\'ba
+\f0  
+\f1 \'bf\'e4\'c3\'bb\'c7\'d2
+\f0  
+\f1 \'bc\'f6
+\f0  
+\f1 \'c0\'d6\'b5\'b5\'b7\'cf
+\f0  
+\f1 \'c1\'a4\'c3\'a5\'c0\'bb
+\f0  
+\f1 \'ba\'af\'b0\'e6\'c7\'cf\'bf\'a9
+\f0  
+\f1 \'bc\'b3\'c1\'a4\'c7\'d8\'be\'df\'c7\'cf\'b4\'c2\'b5\'a5
+\f0 \
+
+\f1 \'b9\'e8\'c6\'f7
+\f0  
+\f1 \'c8\'af\'b0\'e6\'bf\'a1\'bc\'ad\'b4\'c2
+\f0  
+\f1 \'b4\'de\'b6\'f3\'c1\'fa
+\f0  
+\f1 \'bc\'f6
+\f0  
+\f1 \'c0\'d6\'c0\'b8\'b9\'c7\'b7\'ce
+\f0  
+\f1 \'b1\'e2\'ba\'bb
+\f0  
+\f1 \'bc\'b3\'c1\'a4\'c7\'d8\'c1\'d6\'b4\'c2
+\f0  
+\f1 \'b9\'e6\'b9\'fd\'b0\'fa
+\f0  
+\f1 \'ba\'ea\'b6\'f3\'bf\'ec\'c0\'fa\'bf\'a1\'bc\'ad
+\f0  
+\f1 \'bc\'b3\'c1\'a4\'c7\'d8\'c1\'d6\'b4\'c2
+\f0  
+\f1 \'b9\'e6\'b9\'fd\'c0\'bb
+\f0  
+\f1 \'bb\'e7\'bf\'eb\'c7\'d8\'bc\'ad
+\f0  
+\f1 \'c1\'a4\'c3\'a5\'c0\'bb
+\f0  
+\f1 \'ba\'af\'b0\'e6\'c7\'d2
+\f0  
+\f1 \'bc\'f6
+\f0  
+\f1 \'c0\'d6\'b4\'d9
+\f0 .\
+\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+
+\f1 \'be\'db
+\f0  
+\f1 \'b6\'f3\'bf\'ec\'c6\'c3
+\f0 (App Routing)\
+   - app
+\f1 \'bf\'a1
+\f0  
+\f1 \'c1\'b8\'c0\'e7\'c7\'cf\'b4\'c2
+\f0  
+\f1 \'c7\'cf\'c0\'a7\'c6\'fa\'b4\'f5\'b8\'a6
+\f0  URL(Uniform Resource Identifier)
+\f1 \'bf\'cd
+\f0  
+\f1 \'b8\'ca\'c7\'ce\'c7\'d5\'b4\'cf\'b4\'d9
+\f0 .\
+   
+\f1 \'bf\'b9\'b8\'a6
+\f0  
+\f1 \'b5\'e9\'be\'ee
+\f0  app
+\f1 \'c0\'c7
+\f0  
+\f1 \'c7\'cf\'c0\'a7
+\f0  
+\f1 \'c6\'fa\'b4\'f5\'bf\'a1
+\f0  test
+\f1 \'b6\'f3\'b4\'c2
+\f0  
+\f1 \'c6\'fa\'b4\'f5\'b0\'a1
+\f0  
+\f1 \'c0\'d6\'b4\'d9\'b8\'e9
+\f0  localhost:3000/test
+\f1 \'b7\'ce
+\f0  
+\f1 \'bf\'e4\'c3\'bb\'c7\'cf\'b8\'e9
+\f0  
+\f1 \'b5\'cb\'b4\'cf\'b4\'d9
+\f0 .\
+   
+\f1 \'b4\'dc
+\f0 , 
+\f1 \'c6\'fa\'b4\'f5\'bf\'a1
+\f0  
+\f1 \'c0\'d6\'b4\'c2
+\f0  page.tsx 
+\f1 \'c6\'c4\'c0\'cf\'b0\'fa
+\f0  
+\f1 \'b8\'c5\'c7\'ce\'b5\'c7\'b9\'c7\'b7\'ce
+\f0  
+\f1 \'c0\'cc\'b8\'a7\'c0\'ba
+\f0  
+\f1 \'ba\'af\'b0\'e6\'c7\'d2
+\f0  
+\f1 \'bc\'f6
+\f0  
+\f1 \'be\'f8\'c1\'f6\'b8\'b8
+\f0 , \
+   
+\f1 \'c6\'fa\'b4\'f5
+\f0  
+\f1 \'b3\'bb\'ba\'ce\'bf\'a1\'bc\'ad
+\f0  
+\f1 \'be\'ee\'b6\'b2
+\f0  
+\f1 \'c0\'cc\'b8\'a7\'c0\'bb
+\f0  
+\f1 \'bb\'e7\'bf\'eb\'c7\'cf\'b4\'f5\'b6\'f3\'b5\'b5
+\f0  
+\f1 \'bb\'f3\'b0\'fc\'c0\'cc
+\f0  
+\f1 \'be\'f8\'b4\'d9
+\f0 . 
+\f1 \'b5\'fb\'b6\'f3\'bc\'ad
+\f0  hook 
+\f1 \'c7\'d4\'bc\'f6\'b8\'a6
+\f0  
+\f1 \'bb\'e7\'bf\'eb\'c7\'d2
+\f0  
+\f1 \'b6\'a7
+\f0 \
+   
+\f1 \'be\'d5\'b1\'db\'c0\'da\'b8\'a6
+\f0  
+\f1 \'b4\'eb\'b9\'ae\'c0\'da\'b7\'ce
+\f0  
+\f1 \'bb\'e7\'bf\'eb\'c7\'d8\'be\'df\'c7\'cf\'b4\'c2
+\f0  
+\f1 \'b1\'d4\'c4\'a2\'c0\'bb
+\f0  
+\f1 \'c1\'d8\'bc\'f6\'c7\'cf\'bf\'a9
+\f0  
+\f1 \'bb\'e7\'bf\'eb\'c7\'d2
+\f0  
+\f1 \'bc\'f6
+\f0  
+\f1 \'c0\'d6\'bd\'c0\'b4\'cf\'b4\'d9
+\f0 .\
+   \
+
+\f1 \'b6\'f3\'bf\'ec\'c6\'ae
+\f0  
+\f1 \'b1\'d7\'b7\'ec
+\f0 (Route Groups)\
+   - 
+\f1 \'c6\'fa\'b4\'f5
+\f0  
+\f1 \'c0\'cc\'b8\'a7\'c0\'bb
+\f0  
+\f1 \'b0\'fd\'c8\'a3\'b7\'ce
+\f0  
+\f1 \'b0\'a8\'bd\'ce\'b4\'c2
+\f0  
+\f1 \'c7\'fc\'c5\'c2
+\f0 (
+\f1 \'bf\'b9
+\f0 : (auth), (shop))
+\f1 \'b7\'ce
+\f0  
+\f1 \'b5\'f0\'b7\'ba\'c5\'cd\'b8\'ae\'b8\'a6
+\f0  
+\f1 \'b1\'b8\'bc\'ba\'c7\'cf\'b4\'c2
+\f0  
+\f1 \'b9\'e6\'bd\'c4\'c0\'bb
+\f0  
+\f1 \'b8\'bb\'c7\'d5\'b4\'cf\'b4\'d9
+\f0 .\
+   
+\f1 \'b6\'f3\'bf\'ec\'c6\'ae
+\f0  
+\f1 \'b1\'d7\'b7\'ec
+\f0  
+\f1 \'c6\'fa\'b4\'f5\'b8\'ed\'c0\'ba
+\f0  
+\f1 \'bd\'c7\'c1\'a6
+\f0  URL 
+\f1 \'c1\'d6\'bc\'d2\'bf\'a1
+\f0  
+\f1 \'c0\'fc\'c7\'f4
+\f0  
+\f1 \'c6\'f7\'c7\'d4\'b5\'c7\'c1\'f6
+\f0  
+\f1 \'be\'ca\'bd\'c0\'b4\'cf\'b4\'d9
+\f0 . 
+\f1 \'b6\'c7\'c7\'d1
+\f0  
+\f1 \'b1\'d7\'b7\'ec\'ba\'b0\'b7\'ce
+\f0  
+\f1 \'b0\'a2\'b0\'a2\'c0\'c7
+\f0  layout.tsx
+\f1 \'b8\'a6
+\f0  
+\f1 \'b5\'fb\'b7\'ce
+\f0  
+\f1 \'b5\'d1
+\f0  
+\f1 \'bc\'f6
+\f0  
+\f1 \'c0\'d6\'be\'ee
+\f0 , \
+   
+\f1 \'c6\'af\'c1\'a4
+\f0  
+\f1 \'b1\'d7\'b7\'ec\'b3\'a2\'b8\'ae\'b8\'b8
+\f0  
+\f1 \'b0\'f8\'c5\'eb
+\f0  
+\f1 \'b7\'b9\'c0\'cc\'be\'c6\'bf\'f4
+\f0 (
+\f1 \'bf\'b9
+\f0 : 
+\f1 \'bb\'e7\'c0\'cc\'b5\'e5\'b9\'d9\'b0\'a1
+\f0  
+\f1 \'c0\'d6\'b4\'c2
+\f0  
+\f1 \'b0\'fc\'b8\'ae\'c0\'da
+\f0  
+\f1 \'c8\'ad\'b8\'e9
+\f0  vs 
+\f1 \'b1\'e2\'ba\'bb
+\f0  
+\f1 \'bc\'ee\'c7\'ce\'b8\'f4
+\f0  
+\f1 \'c8\'ad\'b8\'e9
+\f0 )
+\f1 \'c0\'bb
+\f0  
+\f1 \'b4\'d9\'b8\'a3\'b0\'d4
+\f0  
+\f1 \'c0\'fb\'bf\'eb\'c7\'d2
+\f0  
+\f1 \'b6\'a7
+\f0  
+\f1 \'b8\'c5\'bf\'ec
+\f0  
+\f1 \'c0\'af\'bf\'eb\'c7\'cf\'b0\'d4
+\f0  
+\f1 \'be\'b2\'c0\'d4\'b4\'cf\'b4\'d9
+\f0 .\
+\
+
+\f1 \'b4\'d9\'c0\'cc\'b3\'aa\'b9\'cd
+\f0  
+\f1 \'b6\'f3\'bf\'ec\'c6\'c3
+\f0 (Dynamic Routing)\
+   - Next.js
+\f1 \'bf\'a1\'bc\'ad\'b4\'c2
+\f0  
+\f1 \'c6\'fa\'b4\'f5
+\f0  
+\f1 \'c0\'cc\'b8\'a7\'c0\'cc\'b3\'aa
+\f0  
+\f1 \'c6\'c4\'c0\'cf
+\f0  
+\f1 \'c0\'cc\'b8\'a7\'c0\'bb
+\f0  
+\f1 \'b4\'eb\'b0\'fd\'c8\'a3
+\f0 ([ ])
+\f1 \'b7\'ce
+\f0  
+\f1 \'b0\'a8\'bd\'ce\'bc\'ad
+\f0  
+\f1 \'b4\'d9\'c0\'cc\'b3\'aa\'b9\'cd
+\f0  
+\f1 \'b6\'f3\'bf\'ec\'c6\'ae\'b8\'a6
+\f0  
+\f1 \'bb\'fd\'bc\'ba\'c7\'d5\'b4\'cf\'b4\'d9
+\f0 .\
+   app/posts/[id]/page.tsx
+\f1 \'bf\'cd
+\f0  
+\f1 \'b0\'b0\'c0\'cc
+\f0  
+\f1 \'b1\'b8\'c1\'b6\'b8\'a6
+\f0  
+\f1 \'b8\'b8\'b5\'e9\'b8\'e9
+\f0 , 
+\f1 \'ba\'ea\'b6\'f3\'bf\'ec\'c0\'fa\'bf\'a1\'bc\'ad
+\f0  /posts/1, /posts/abc 
+\f1 \'b5\'ee
+\f0  
+\f1 \'be\'ee\'b6\'b2
+\f0  
+\f1 \'b0\'aa\'c0\'cc
+\f0  
+\f1 \'b5\'e9\'be\'ee\'bf\'c0\'b5\'e7
+\f0 \
+   
+\f1 \'c0\'cc
+\f0  
+\f1 \'c6\'e4\'c0\'cc\'c1\'f6
+\f0  
+\f1 \'c4\'c4\'c6\'f7\'b3\'cd\'c6\'ae\'b0\'a1
+\f0  
+\f1 \'c8\'a3\'c3\'e2\'b5\'cb\'b4\'cf\'b4\'d9
+\f0 . 
+\f1 \'c6\'af\'c8\'f7
+\f0  
+\f1 \'c3\'d6\'bd\'c5
+\f0  Next.js 
+\f1 \'c8\'af\'b0\'e6
+\f0 (App Router)
+\f1 \'bf\'a1\'bc\'ad\'b4\'c2
+\f0  
+\f1 \'bc\'ba\'b4\'c9
+\f0  
+\f1 \'c3\'d6\'c0\'fb\'c8\'ad\'bf\'cd
+\f0  
+\f1 \'ba\'f1\'b5\'bf\'b1\'e2
+\f0  
+\f1 \'c3\'b3\'b8\'ae\'b8\'a6
+\f0  
+\f1 \'c0\'a7\'c7\'d8
+\f0 \
+   params
+\f1 \'b0\'a1
+\f0  Promise 
+\f1 \'c7\'fc\'c5\'c2\'b7\'ce
+\f0  
+\f1 \'c0\'fc\'b4\'de\'b5\'c7\'b9\'c7\'b7\'ce
+\f0 , async/await
+\f1 \'b8\'a6
+\f0  
+\f1 \'bb\'e7\'bf\'eb\'c7\'d8
+\f0  const \{ id \} = await params; 
+\f1 \'c7\'fc\'c5\'c2\'b7\'ce
+\f0  
+\f1 \'b0\'aa\'c0\'bb
+\f0  
+\f1 \'c3\'df\'c3\'e2\'c7\'cf\'bf\'a9
+\f0 \
+   
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd\'ba\'a3\'c0\'cc\'bd\'ba
+\f0  
+\f1 \'c1\'b6\'c8\'b8\'b3\'aa
+\f0  API 
+\f1 \'c8\'a3\'c3\'e2\'bf\'a1
+\f0  
+\f1 \'b0\'f0\'b9\'d9\'b7\'ce
+\f0  
+\f1 \'c8\'b0\'bf\'eb\'c7\'d5\'b4\'cf\'b4\'d9
+\f0 .\
+\
+================================================================================\
+\
+REST API(Representaional State Transfer API)\
+   HTTP URI(Uniform Resource Identifier)
+\f1 \'b8\'a6
+\f0  
+\f1 \'c5\'eb\'c7\'d8
+\f0  
+\f1 \'c0\'da\'bf\'f8\'c0\'bb
+\f0  
+\f1 \'b8\'ed\'bd\'c3\'c7\'d2
+\f0  
+\f1 \'bc\'f6
+\f0  
+\f1 \'c0\'d6\'be\'ee\'be\'df
+\f0  
+\f1 \'c7\'d1\'b4\'d9
+\f0 .\
+   HTTP Method(GET, POST, PUT, PATCH, DELETE 
+\f1 \'b5\'ee
+\f0 )
+\f1 \'b8\'a6
+\f0  
+\f1 \'c5\'eb\'c7\'d8
+\f0  
+\f1 \'c7\'d8\'b4\'e7
+\f0  
+\f1 \'c0\'da\'bf\'f8\'bf\'a1
+\f0  
+\f1 \'b4\'eb\'c7\'d1
+\f0 \
+   CRUD
+\f1 \'b8\'a6
+\f0  
+\f1 \'c0\'fb\'bf\'eb\'c7\'d1\'b4\'d9
+\f0 .\
+\
+REST API 
+\f1 \'bc\'b3\'b0\'e8
+\f0  
+\f1 \'b9\'e6\'bd\'c4
+\f0  // 
+\f1 \'c8\'b8\'bb\'e7\'b8\'b6\'b4\'d9
+\f0  
+\f1 \'b4\'d9\'b8\'a3\'b4\'d9
+\f0 \
+   1. URI
+\f1 \'b4\'c2
+\f0  
+\f1 \'b5\'bf\'bb\'e7\'b0\'a1
+\f0  
+\f1 \'be\'c6\'b4\'d1
+\f0  
+\f1 \'b8\'ed\'bb\'e7
+\f0 , 
+\f1 \'b4\'eb\'b9\'ae\'c0\'da\'b0\'a1
+\f0  
+\f1 \'be\'c6\'b4\'d1
+\f0  
+\f1 \'bc\'d2\'b9\'ae\'c0\'da\'b7\'ce
+\f0  
+\f1 \'bb\'e7\'bf\'eb\'c7\'d8\'be\'df
+\f0  
+\f1 \'c7\'d1\'b4\'d9
+\f0 .\
+      
+\f1 \'c0\'df\'b8\'f8\'b5\'c8
+\f0  
+\f1 \'bf\'b9\'bd\'c3
+\f0 : http://app.com/Writing\
+      
+\f1 \'bf\'c3\'b9\'d9\'b8\'a5
+\f0  
+\f1 \'bf\'b9\'bd\'c3
+\f0 : http://app.com/write\
+\
+   2. 
+\f1 \'b8\'b6\'c1\'f6\'b8\'b7\'bf\'a1
+\f0  
+\f1 \'bd\'bd\'b7\'a1\'bd\'c3\'b8\'a6
+\f0  
+\f1 \'c0\'db\'bc\'ba\'c7\'cf\'c1\'f6
+\f0  
+\f1 \'be\'ca\'b4\'c2\'b4\'d9
+\f0 .\
+      
+\f1 \'c0\'df\'b8\'f8\'b5\'c8
+\f0  
+\f1 \'bf\'b9\'bd\'c3
+\f0 : http://app.com/api/post/1/\
+      
+\f1 \'bf\'c3\'b9\'d9\'b8\'a5
+\f0  
+\f1 \'bf\'b9\'bd\'c3
+\f0 : http://app.com/api/post/1\
+\
+   3. 
+\f1 \'be\'f0\'b4\'f5\'b9\'d9
+\f0  
+\f1 \'b4\'eb\'bd\'c5
+\f0  
+\f1 \'c7\'cf\'c0\'cc\'c6\'f9\'c0\'bb
+\f0  
+\f1 \'c0\'db\'bc\'ba\'c7\'d1\'b4\'d9
+\f0 .\
+      
+\f1 \'c0\'df\'b8\'f8\'b5\'c8
+\f0  
+\f1 \'bf\'b9\'bd\'c3
+\f0 : http://app.com/api/fruit_info\
+      
+\f1 \'bf\'c3\'b9\'d9\'b8\'a5
+\f0  
+\f1 \'bf\'b9\'bd\'c3
+\f0 : http://app.com/api/fruit-info\
+\
+   4. 
+\f1 \'c8\'ae\'c0\'e5\'c0\'da\'b8\'a6
+\f0  
+\f1 \'c6\'f7\'c7\'d4\'bd\'c3\'c5\'b0\'c1\'f6
+\f0  
+\f1 \'be\'ca\'b4\'c2\'b4\'d9
+\f0 .\
+      
+\f1 \'c0\'df\'b8\'f8\'b5\'c8
+\f0  
+\f1 \'bf\'b9\'bd\'c3
+\f0 : http://app.com/api/fruit.png      \
+      
+\f1 \'bf\'c3\'b9\'d9\'b8\'a5
+\f0  
+\f1 \'bf\'b9\'bd\'c3
+\f0 : http://app.com/api/fruit\
+\
+   5. 
+\f1 \'b5\'bf\'c0\'db\'c0\'bb
+\f0  
+\f1 \'c6\'f7\'c7\'d4\'bd\'c3\'c5\'b0\'c1\'f6
+\f0  
+\f1 \'be\'ca\'b4\'c2\'b4\'d9
+\f0 .\
+      
+\f1 \'c0\'df\'b8\'f8\'b5\'c8
+\f0  
+\f1 \'bf\'b9\'bd\'c3
+\f0 : http://app.com/api/do-read/1\
+      
+\f1 \'bf\'c3\'b9\'d9\'b8\'a5
+\f0  
+\f1 \'bf\'b9\'bd\'c3
+\f0 : http://app.com/api/posts/1\
+\
+RESTful\
+   REST 
+\f1 \'bf\'f8\'c4\'a2\'c0\'bb
+\f0  
+\f1 \'b5\'fb\'b8\'a3\'b4\'c2
+\f0  
+\f1 \'bd\'c3\'bd\'ba\'c5\'db\'c0\'bb
+\f0  
+\f1 \'c0\'c7\'b9\'cc\'c7\'d1\'b4\'d9
+\f0 .\
+   REST
+\f1 \'b9\'e6\'bd\'c4\'c0\'b8\'b7\'ce
+\f0  
+\f1 \'bc\'b3\'b0\'e8\'c7\'df\'c0\'bb\'c1\'f6\'b6\'f3\'b5\'b5
+\f0  
+\f1 \'bc\'b3\'b0\'e8
+\f0  
+\f1 \'bf\'f8\'c4\'a2
+\f0  
+\f1 \'b9\'d7
+\f0  
+\f1 \'b1\'d4\'c4\'a2\'c0\'bb
+\f0  
+\f1 \'c1\'a4\'c8\'ae\'c7\'cf\'b0\'d4
+\f0  
+\f1 \'c1\'f6\'c5\'b2
+\f0  
+\f1 \'bd\'c3\'bd\'ba\'c5\'db\'b8\'b8\'c0\'cc
+\f0  RESTful
+\f1 \'c7\'cf\'b4\'d9\'b0\'ed
+\f0  
+\f1 \'b8\'bb\'c7\'d1\'b4\'d9
+\f0 .\
+\
+CORS(Cross Origin Resource Sharing)\
+   
+\f1 \'c7\'c1\'b7\'ce\'c5\'e4\'c4\'dd
+\f0 , 
+\f1 \'b5\'b5\'b8\'de\'c0\'ce
+\f0 , 
+\f1 \'c6\'f7\'c6\'ae
+\f0  
+\f1 \'b9\'f8\'c8\'a3\'b0\'a1
+\f0  
+\f1 \'c7\'cf\'b3\'aa\'b6\'f3\'b5\'b5
+\f0  
+\f1 \'b4\'d9\'b8\'a3\'b8\'e9
+\f0  
+\f1 \'b9\'df\'bb\'fd\'c7\'d1\'b4\'d9
+\f0 .\
+  
+\f1 \'bc\'bc\'bc\'c7\'c0\'bb
+\f0  
+\f1 \'c5\'bb\'c3\'eb\'c7\'cf\'bf\'a9
+\f0  
+\f1 \'be\'c7\'c0\'c7\'c0\'fb\'c0\'b8\'b7\'ce
+\f0  
+\f1 \'c1\'a4\'ba\'b8\'b8\'a6
+\f0  
+\f1 \'c3\'df\'c3\'e2\'c7\'cf\'b0\'c5\'b3\'aa
+\f0 \
+  
+\f1 \'b4\'d9\'b8\'a5
+\f0  
+\f1 \'bb\'e7\'b6\'f7\'c0\'c7
+\f0  
+\f1 \'c1\'a4\'ba\'b8\'b8\'a6
+\f0  
+\f1 \'c0\'d4\'b7\'c2\'c7\'cf\'b4\'c2
+\f0  
+\f1 \'b5\'ee
+\f0  
+\f1 \'b0\'f8\'b0\'dd\'c7\'d2
+\f0  
+\f1 \'bc\'f6
+\f0  
+\f1 \'c0\'d6\'b1\'e2
+\f0  
+\f1 \'b6\'a7\'b9\'ae\'bf\'a1
+\f0 ,\
+  
+\f1 \'ba\'ea\'b6\'f3\'bf\'ec\'c0\'fa\'bf\'a1\'bc\'ad
+\f0  
+\f1 \'c0\'cc\'b8\'a6
+\f0  
+\f1 \'ba\'b8\'c8\'a3\'c7\'cf\'b0\'ed
+\f0  Cross-Origin
+\f1 \'c0\'cc
+\f0  
+\f1 \'c7\'ca\'bf\'e4\'c7\'d1
+\f0  
+\f1 \'b0\'e6\'bf\'ec
+\f0  
+\f1 \'b5\'fb\'b7\'ce
+\f0  
+\f1 \'bc\'b3\'c1\'a4\'c0\'cc
+\f0  
+\f1 \'c7\'ca\'bf\'e4\'c7\'cf\'b4\'d9
+\f0 .\
+\
+  
+\f1 \'bc\'ad\'b9\'f6\'b0\'a1
+\f0  
+\f1 \'c0\'c0\'b4\'e4\'c7\'d2
+\f0  
+\f1 \'b6\'a7
+\f0  
+\f1 \'ba\'ea\'b6\'f3\'bf\'ec\'c0\'fa\'b0\'a1
+\f0  
+\f1 \'bf\'e4\'c3\'bb\'c7\'d1
+\f0  Origin
+\f1 \'b0\'fa
+\f0 \
+  
+\f1 \'c0\'c0\'b4\'e4\'c7\'d1
+\f0  
+\f1 \'c7\'ec\'b4\'f5
+\f0  Access-Control-Request-Headers
+\f1 \'c0\'c7
+\f0  
+\f1 \'b0\'aa\'c0\'bb
+\f0  
+\f1 \'ba\'f1\'b1\'b3\'c7\'cf\'bf\'a9
+\f0 \
+  
+\f1 \'c0\'af\'c8\'bf\'c7\'d1
+\f0  
+\f1 \'bf\'e4\'c3\'bb\'c0\'cc\'b6\'f3\'b8\'e9
+\f0  
+\f1 \'b8\'ae\'bc\'d2\'bd\'ba\'b8\'a6
+\f0  
+\f1 \'c0\'c0\'b4\'e4\'c7\'d1\'b4\'d9
+\f0 .\
+  
+\f1 \'b8\'b8\'be\'e0
+\f0  
+\f1 \'c0\'af\'c8\'bf\'c7\'cf\'c1\'f6
+\f0  
+\f1 \'be\'ca\'c0\'ba
+\f0  
+\f1 \'bf\'e4\'c3\'bb\'c0\'cc\'b6\'f3\'b8\'e9
+\f0  
+\f1 \'ba\'ea\'b6\'f3\'bf\'ec\'c0\'fa\'bf\'a1\'bc\'ad
+\f0  
+\f1 \'c0\'cc\'b8\'a6
+\f0  
+\f1 \'b8\'b7\'b0\'ed
+\f0  
+\f1 \'bf\'a1\'b7\'af\'b0\'a1
+\f0  
+\f1 \'b9\'df\'bb\'fd\'c7\'d1\'b4\'d9
+\f0 .\
+    \
+- origin : url
+\f1 \'bf\'a1\'bc\'ad
+\f0  uri
+\f1 \'b8\'a6
+\f0  
+\f1 \'c1\'a6\'bf\'dc\'c7\'d1
+\f0  
+\f1 \'b0\'cd\'c0\'cc
+\f0  origin
+\f1 \'c0\'cc\'b6\'f3\'b0\'ed
+\f0  
+\f1 \'c7\'d1\'b4\'d9
+\f0 . 
+\f1 \'c7\'cf\'b3\'aa\'c0\'c7
+\f0  
+\f1 \'b7\'ce\'c4\'c3
+\f0  
+\f1 \'bc\'ad\'b9\'f6\'bf\'a1\'bc\'ad\'b4\'c2
+\f0  \
+origin
+\f1 \'c0\'cc
+\f0  
+\f1 \'b5\'bf\'c0\'cf\'c7\'d8\'be\'df
+\f0  
+\f1 \'c7\'cf\'b8\'e7
+\f0 , 
+\f1 \'c0\'cc
+\f0  origin
+\f1 \'c0\'cc
+\f0  
+\f1 \'bf\'e4\'c3\'bb\'c7\'cf\'b4\'c2
+\f0  
+\f1 \'b0\'cd\'c0\'ba
+\f0  
+\f1 \'bf\'e4\'c3\'bb\'c7\'d2
+\f0  
+\f1 \'bc\'f6
+\f0  
+\f1 \'c0\'d6\'b5\'b5\'b7\'cf
+\f0  
+\f1 \'c1\'a4\'c3\'a5\'c0\'bb
+\f0  
+\f1 \'ba\'af\'b0\'e6\'c7\'cf\'bf\'a9
+\f0  
+\f1 \'bc\'b3\'c1\'a4\'c7\'d8\'be\'df\'c7\'cf\'b4\'c2\'b5\'a5
+\f0 \
+
+\f1 \'b9\'e8\'c6\'f7
+\f0  
+\f1 \'c8\'af\'b0\'e6\'bf\'a1\'bc\'ad\'b4\'c2
+\f0  
+\f1 \'b4\'de\'b6\'f3\'c1\'fa
+\f0  
+\f1 \'bc\'f6
+\f0  
+\f1 \'c0\'d6\'c0\'b8\'b9\'c7\'b7\'ce
+\f0  
+\f1 \'b1\'e2\'ba\'bb
+\f0  
+\f1 \'bc\'b3\'c1\'a4\'c7\'d8\'c1\'d6\'b4\'c2
+\f0  
+\f1 \'b9\'e6\'b9\'fd\'b0\'fa
+\f0  
+\f1 \'ba\'ea\'b6\'f3\'bf\'ec\'c0\'fa\'bf\'a1\'bc\'ad
+\f0  
+\f1 \'bc\'b3\'c1\'a4\'c7\'d8\'c1\'d6\'b4\'c2
+\f0  
+\f1 \'b9\'e6\'b9\'fd\'c0\'bb
+\f0  
+\f1 \'bb\'e7\'bf\'eb\'c7\'d8\'bc\'ad
+\f0  
+\f1 \'c1\'a4\'c3\'a5\'c0\'bb
+\f0  
+\f1 \'ba\'af\'b0\'e6\'c7\'d2
+\f0  
+\f1 \'bc\'f6
+\f0  
+\f1 \'c0\'d6\'b4\'d9
+\f0 .\
+\
+\
+=================================================================================\
+
+\f1 \'b8\'ae\'be\'d7\'c6\'ae
+\f0  
+\f1 \'c4\'f5\'b8\'ae
+\f0 (React-Query, TanStack Query)\
+   - 
+\f1 \'bc\'ad\'b9\'f6\'b7\'ce\'ba\'ce\'c5\'cd
+\f0  
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd
+\f0  
+\f1 \'b0\'a1\'c1\'ae\'bf\'c0\'b1\'e2
+\f0 , 
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd
+\f0  
+\f1 \'c4\'b3\'bd\'cc
+\f0 , 
+\f1 \'c4\'b3\'bd\'c3
+\f0  
+\f1 \'c1\'a6\'be\'ee
+\f0  
+\f1 \'b5\'ee
+\f0  
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6
+\f0  
+\f1 \'bd\'b1\'b0\'ed
+\f0  \
+   
+\f1 \'c8\'bf\'c0\'b2\'c0\'fb\'c0\'b8\'b7\'ce
+\f0  
+\f1 \'b0\'fc\'b8\'ae\'c7\'d2
+\f0  
+\f1 \'bc\'f6
+\f0  
+\f1 \'c0\'d6\'b4\'c2
+\f0  
+\f1 \'b6\'f3\'c0\'cc\'ba\'ea\'b7\'af\'b8\'ae\'c0\'cc\'b4\'d9
+\f0 . v4
+\f1 \'ba\'ce\'c5\'cd
+\f0  Vue
+\f1 \'b3\'aa
+\f0  Svelte 
+\f1 \'b5\'ee\'c0\'c7
+\f0  \
+   
+\f1 \'b4\'d9\'b8\'a5
+\f0  
+\f1 \'c7\'c1\'b7\'b9\'c0\'d3\'bf\'f6\'c5\'a9\'bf\'a1\'bc\'ad\'b5\'b5
+\f0  
+\f1 \'c8\'b0\'bf\'eb\'c7\'d2
+\f0  
+\f1 \'bc\'f6
+\f0  
+\f1 \'c0\'d6\'b5\'b5\'b7\'cf
+\f0  
+\f1 \'b1\'e2\'b4\'c9\'c0\'cc
+\f0  
+\f1 \'c8\'ae\'c0\'e5\'b5\'c7\'b8\'e7
+\f0  TanStack Query
+\f1 \'b6\'f3\'b4\'c2
+\f0  
+\f1 \'c0\'cc\'b8\'a7\'c0\'b8\'b7\'ce
+\f0  
+\f1 \'ba\'af\'b0\'e6\'b5\'c7\'be\'fa\'b4\'d9
+\f0 .\
+   - 
+\f1 \'c1\'d6\'b7\'ce
+\f0  
+\f1 \'b4\'eb\'b1\'d4\'b8\'f0
+\f0  
+\f1 \'c7\'c1\'b7\'ce\'c1\'a7\'c6\'ae\'bf\'a1
+\f0  
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd
+\f0  
+\f1 \'c4\'b3\'bd\'cc\'c0\'bb
+\f0  
+\f1 \'b0\'fc\'b8\'ae\'c7\'cf\'b1\'e2
+\f0  
+\f1 \'c0\'a7\'c7\'d8
+\f0  
+\f1 \'bb\'e7\'bf\'eb\'b5\'c8\'b4\'d9
+\f0 \
+   - https://tanstack.com/query/latest/docs/framework/react/overview\
+\
+[
+\f1 \'bc\'b3\'c4\'a1
+\f0  
+\f1 \'b8\'ed\'b7\'c9\'be\'ee
+\f0 \
+      > yarn add @tanstack/react-query\
+      > yarn add -D @tanstack/react-query-devtools\
+\
+
+\f1 \'b8\'ae\'be\'d7\'c6\'ae
+\f0  
+\f1 \'c4\'f5\'b8\'ae\'c0\'c7
+\f0  
+\f1 \'c1\'d6\'bf\'e4
+\f0  
+\f1 \'b1\'e2\'b4\'c9
+\f0 \
+   - 
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd
+\f0  
+\f1 \'b0\'a1\'c1\'ae\'bf\'c0\'b1\'e2
+\f0  
+\f1 \'b9\'d7
+\f0  
+\f1 \'c4\'b3\'bd\'cc
+\f0 \
+   - 
+\f1 \'b5\'bf\'c0\'cf
+\f0  
+\f1 \'bf\'e4\'c3\'bb\'c0\'c7
+\f0  
+\f1 \'c1\'df\'ba\'b9
+\f0  
+\f1 \'c1\'a6\'b0\'c5
+\f0 \
+   - 
+\f1 \'bd\'c5\'bc\'b1\'c7\'d1
+\f0  
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd
+\f0  
+\f1 \'c0\'af\'c1\'f6
+\f0 \
+   - 
+\f1 \'b9\'ab\'c7\'d1
+\f0  
+\f1 \'bd\'ba\'c5\'a9\'b7\'d1
+\f0 , 
+\f1 \'c6\'e4\'c0\'cc\'c1\'f6\'b3\'d7\'c0\'cc\'bc\'c7
+\f0  
+\f1 \'b5\'ee\'c0\'c7
+\f0  
+\f1 \'bc\'ba\'b4\'c9
+\f0  
+\f1 \'c3\'d6\'c0\'fb\'c8\'ad
+\f0 \
+   - 
+\f1 \'b3\'d7\'c6\'ae\'bf\'f6\'c5\'a9
+\f0  
+\f1 \'c0\'e7\'bf\'ac\'b0\'e1
+\f0 , 
+\f1 \'bf\'e4\'c3\'bb
+\f0  
+\f1 \'bd\'c7\'c6\'d0
+\f0  
+\f1 \'b5\'ee\'c0\'c7
+\f0  
+\f1 \'c0\'da\'b5\'bf
+\f0  
+\f1 \'b0\'bb\'bd\'c5
+\f0 \
+\
+
+\f1 \'b8\'ae\'be\'d7\'c6\'ae
+\f0  
+\f1 \'c4\'f5\'b8\'ae
+\f0  
+\f1 \'c1\'d6\'bf\'e4
+\f0  
+\f1 \'b5\'bf\'c0\'db
+\f0  
+\f1 \'bc\'b3\'b8\'ed
+\f0 \
+1. queryKey\
+   - TanStack Query
+\f1 \'b8\'a6
+\f0  
+\f1 \'c8\'b0\'bf\'eb\'c7\'d8\'bc\'ad
+\f0  
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6
+\f0  
+\f1 \'b0\'a1\'c1\'ae\'bf\'c3
+\f0  
+\f1 \'b6\'a7\'b4\'c2
+\f0  
+\f1 \'c7\'d7\'bb\'f3
+\f0  
+\f1 \'c4\'f5\'b8\'ae
+\f0  
+\f1 \'c5\'b0
+\f0 (queryKey)
+\f1 \'b8\'a6
+\f0  
+\f1 \'c1\'f6\'c1\'a4\'c7\'d1\'b4\'d9
+\f0 .\
+   
+\f1 \'c0\'cc
+\f0  
+\f1 \'c4\'f5\'b8\'ae
+\f0  
+\f1 \'c5\'b0\'b4\'c2
+\f0  
+\f1 \'c4\'b3\'bd\'c3\'b5\'c8
+\f0  
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd\'bf\'cd
+\f0  
+\f1 \'ba\'f1\'b1\'b3\'c7\'d8
+\f0  
+\f1 \'bb\'f5\'b7\'ce\'bf\'ee
+\f0  
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6
+\f0  
+\f1 \'b0\'a1\'c1\'ae\'bf\'c3\'c1\'f6
+\f0 , 
+\f1 \'c4\'b3\'bd\'c3\'b5\'c8
+\f0  
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6
+\f0  
+\f1 \'bb\'e7\'bf\'eb\'c7\'d2\'c1\'f6
+\f0  
+\f1 \'b0\'e1\'c1\'a4\'c7\'cf\'b4\'c2
+\f0  
+\f1 \'b1\'e2\'c1\'d8\'c0\'cc
+\f0  
+\f1 \'b5\'c8\'b4\'d9
+\f0 \
+   
+\f1 \'c1\'ef
+\f0 , 
+\f1 \'c0\'cf\'c4\'a1\'c7\'cf\'b4\'c2
+\f0  Key
+\f1 \'b0\'a1
+\f0  
+\f1 \'be\'f8\'b4\'d9\'b8\'e9
+\f0  
+\f1 \'bb\'f5\'b7\'ce\'bf\'ee
+\f0  
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6
+\f0  
+\f1 \'ba\'d2\'b7\'af\'bf\'c2\'b4\'d9
+\f0 . 
+\f1 \'b9\'dd\'b4\'eb\'b7\'ce
+\f0  Key
+\f1 \'b0\'a1
+\f0  
+\f1 \'c0\'d6\'b4\'d9\'b8\'e9
+\f0  
+\f1 \'bf\'e4\'c3\'bb\'c7\'cf\'c1\'f6
+\f0  
+\f1 \'be\'ca\'b0\'ed
+\f0  
+\f1 \'c4\'b3\'bd\'c3\'b5\'c8
+\f0  
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6
+\f0  
+\f1 \'ba\'d2\'b7\'af\'bf\'c2\'b4\'d9
+\f0 .\
+   \
+2. staleTime\
+   - 
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd\'c0\'c7
+\f0  
+\f1 \'bd\'c5\'bc\'b1\'b5\'b5
+\f0 *
+\f1 \'b8\'a6
+\f0  
+\f1 \'b0\'fc\'b8\'ae\'c7\'d1\'b4\'d9
+\f0 . 
+\f1 \'c4\'b3\'bd\'c3\'b5\'c8
+\f0  
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd\'b0\'a1
+\f0  
+\f1 \'bd\'c5\'bc\'b1\'c7\'cf\'b4\'d9\'b8\'e9
+\f0  
+\f1 \'c4\'b3\'bd\'c3\'b5\'c8
+\f0  
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6
+\f0  
+\f1 \'bb\'e7\'bf\'eb\'c7\'cf\'b0\'ed
+\f0 , \
+   
+\f1 \'b8\'b8\'be\'e0
+\f0  
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd\'b0\'a1
+\f0  
+\f1 \'bb\'f3\'c7\'df\'b4\'d9\'b8\'e9
+\f0 (Stale) 
+\f1 \'bc\'ad\'b9\'f6\'bf\'a1
+\f0  
+\f1 \'b4\'d9\'bd\'c3
+\f0  
+\f1 \'bf\'e4\'c3\'bb\'c7\'d8
+\f0  
+\f1 \'bd\'c5\'bc\'b1\'c7\'d1
+\f0 (Frash) 
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6
+\f0  
+\f1 \'b0\'a1\'c1\'ae\'bf\'c2\'b4\'d9
+\f0 \
+   \
+3. queryClient\
+   - React Query
+\f1 \'c0\'c7
+\f0  
+\f1 \'c4\'b3\'bd\'c3
+\f0  
+\f1 \'b0\'fc\'b8\'ae\'c0\'da
+\f0  
+\f1 \'b0\'b4\'c3\'bc\'c0\'cc\'bf\'a9
+\f0 , useQuery, useMutation 
+\f1 \'b5\'ee
+\f0  
+\f1 \'c4\'b3\'bd\'c3\'b8\'a6
+\f0  
+\f1 \'b0\'fc\'b8\'ae\'c7\'cf\'b4\'c2
+\f0  
+\f1 \'b0\'b4\'c3\'bc\'c0\'cc\'b4\'d9
+\f0 .\
+\
+4. QueryClientProvider\
+   - queryClient
+\f1 \'b8\'a6
+\f0  
+\f1 \'c1\'a6\'b0\'f8\'c7\'cf\'b4\'c2
+\f0  Context
+\f1 \'c0\'cc\'b4\'d9
+\f0 .\
+   \
+5. useQuery\
+   - const 
+\f1 \'b9\'dd\'c8\'af
+\f0  = useQuery(
+\f1 \'bf\'c9\'bc\'c7
+\f0 )\
+   \
+6. useQuery 
+\f1 \'c1\'d6\'bf\'e4
+\f0  
+\f1 \'bf\'c9\'bc\'c7
+\f0  
+\f1 \'c1\'a4\'b8\'ae
+\f0 \
+   - queryKey (
+\f1 \'c7\'ca\'bc\'f6
+\f0 ): 
+\f1 \'c4\'f5\'b8\'ae\'b8\'a6
+\f0  
+\f1 \'bd\'c4\'ba\'b0\'c7\'cf\'b4\'c2
+\f0  
+\f1 \'b0\'ed\'c0\'af
+\f0  
+\f1 \'c5\'b0
+\f0 . 
+\f1 \'b9\'e8\'bf\'ad
+\f0  
+\f1 \'c7\'fc\'c5\'c2\'b7\'ce
+\f0  
+\f1 \'c1\'f6\'c1\'a4
+\f0 \
+   ex) ['user', id]\
+\
+   - queryFn (
+\f1 \'c7\'ca\'bc\'f6
+\f0 ): 
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd\'b8\'a6
+\f0  
+\f1 \'b0\'a1\'c1\'ae\'bf\'c0\'b4\'c2
+\f0  
+\f1 \'ba\'f1\'b5\'bf\'b1\'e2
+\f0  
+\f1 \'c7\'d4\'bc\'f6
+\f0  (Promise 
+\f1 \'b9\'dd\'c8\'af
+\f0  
+\f1 \'c7\'ca\'bc\'f6
+\f0 )\
+   ex) () => fetchUser(id)\
+\
+   - enabled: 
+\f1 \'c4\'f5\'b8\'ae
+\f0  
+\f1 \'c0\'da\'b5\'bf
+\f0  
+\f1 \'bd\'c7\'c7\'e0
+\f0  
+\f1 \'bf\'a9\'ba\'ce
+\f0 \
+   false
+\f1 \'c0\'cf
+\f0  
+\f1 \'b0\'e6\'bf\'ec
+\f0  
+\f1 \'bc\'f6\'b5\'bf
+\f0  
+\f1 \'bd\'c7\'c7\'e0\'b8\'b8
+\f0  
+\f1 \'b0\'a1\'b4\'c9
+\f0 \
+   ex) enabled: !!id\
+\
+   - staleTime: 
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd\'b0\'a1
+\f0  \'93
+\f1 \'bd\'c5\'bc\'b1
+\f0 \'94
+\f1 \'c7\'cf\'b4\'d9\'b0\'ed
+\f0  
+\f1 \'b0\'a3\'c1\'d6\'b5\'c7\'b4\'c2
+\f0  
+\f1 \'bd\'c3\'b0\'a3
+\f0 (ms)\
+   ex) staleTime: 5 * 60 * 1000  // 5
+\f1 \'ba\'d0
+\f0 \
+\
+   - cacheTime (gcTime): 
+\f1 \'ba\'f1\'c8\'b0\'bc\'ba
+\f0  
+\f1 \'c4\'f5\'b8\'ae\'b0\'a1
+\f0  
+\f1 \'c4\'b3\'bd\'c3\'bf\'a1
+\f0  
+\f1 \'c0\'af\'c1\'f6\'b5\'c7\'b4\'c2
+\f0  
+\f1 \'bd\'c3\'b0\'a3
+\f0 (ms)\
+   ex) cacheTime: 10 * 60 * 1000  // 10
+\f1 \'ba\'d0
+\f0 \
+\
+   - refetchOnWindowFocus: 
+\f1 \'ba\'ea\'b6\'f3\'bf\'ec\'c0\'fa
+\f0  
+\f1 \'c6\'f7\'c4\'bf\'bd\'ba
+\f0  
+\f1 \'bd\'c3
+\f0  
+\f1 \'c0\'da\'b5\'bf
+\f0  
+\f1 \'c0\'e7\'bf\'e4\'c3\'bb
+\f0  
+\f1 \'bf\'a9\'ba\'ce
+\f0 \
+   ex) refetchOnWindowFocus: false\
+\
+   - refetchOnReconnect: 
+\f1 \'b3\'d7\'c6\'ae\'bf\'f6\'c5\'a9
+\f0  
+\f1 \'c0\'e7\'bf\'ac\'b0\'e1
+\f0  
+\f1 \'bd\'c3
+\f0  
+\f1 \'c0\'da\'b5\'bf
+\f0  
+\f1 \'c0\'e7\'bf\'e4\'c3\'bb
+\f0  
+\f1 \'bf\'a9\'ba\'ce
+\f0 \
+   ex) refetchOnReconnect: true\
+\
+   - refetchOnMount: 
+\f1 \'c4\'c4\'c6\'f7\'b3\'cd\'c6\'ae
+\f0  
+\f1 \'b8\'b6\'bf\'ee\'c6\'ae
+\f0  
+\f1 \'bd\'c3
+\f0  
+\f1 \'c0\'da\'b5\'bf
+\f0  
+\f1 \'c0\'e7\'bf\'e4\'c3\'bb
+\f0  
+\f1 \'bf\'a9\'ba\'ce
+\f0 \
+   ex) refetchOnMount: false\
+\
+   - retry: 
+\f1 \'bd\'c7\'c6\'d0
+\f0  
+\f1 \'bd\'c3
+\f0  
+\f1 \'c0\'e7\'bd\'c3\'b5\'b5
+\f0  
+\f1 \'c8\'bd\'bc\'f6
+\f0 \
+   ex) retry: 1  // 
+\f1 \'c7\'d1
+\f0  
+\f1 \'b9\'f8\'b8\'b8
+\f0  
+\f1 \'c0\'e7\'bd\'c3\'b5\'b5
+\f0 \
+   ex) retry: false  // 
+\f1 \'c0\'e7\'bd\'c3\'b5\'b5
+\f0  
+\f1 \'ba\'f1\'c8\'b0\'bc\'ba\'c8\'ad
+\f0 \
+\
+   - select: 
+\f1 \'b0\'a1\'c1\'ae\'bf\'c2
+\f0  
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd
+\f0  
+\f1 \'c1\'df
+\f0  
+\f1 \'c7\'ca\'bf\'e4\'c7\'d1
+\f0  
+\f1 \'ba\'ce\'ba\'d0\'b8\'b8
+\f0  
+\f1 \'bc\'b1\'c5\'c3
+\f0 \
+   ex) select: (data) => data.result\
+\
+   - placeholderData: 
+\f1 \'b7\'ce\'b5\'f9
+\f0  
+\f1 \'c1\'df\'bf\'a1
+\f0  
+\f1 \'c0\'d3\'bd\'c3\'b7\'ce
+\f0  
+\f1 \'ba\'b8\'bf\'a9\'c1\'d9
+\f0  
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd
+\f0 \
+   ex) placeholderData: \{ name: '
+\f1 \'b7\'ce\'b5\'f9
+\f0  
+\f1 \'c1\'df
+\f0 ...' \}\
+\
+   - initialData: 
+\f1 \'c4\'f5\'b8\'ae
+\f0  
+\f1 \'bd\'c7\'c7\'e0
+\f0  
+\f1 \'c0\'fc
+\f0  
+\f1 \'b1\'e2\'ba\'bb
+\f0  
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd
+\f0  (SSR 
+\f1 \'b5\'ee\'bf\'a1\'bc\'ad
+\f0  
+\f1 \'c0\'af\'bf\'eb
+\f0 )\
+   ex) initialData: \{ id: 1, name: '
+\f1 \'b1\'e2\'c1\'b8
+\f0  
+\f1 \'c0\'af\'c0\'fa
+\f0 ' \}\
+\
+   - refetchInterval: 
+\f1 \'c1\'d6\'b1\'e2\'c0\'fb\'c0\'b8\'b7\'ce
+\f0  
+\f1 \'b5\'a5\'c0\'cc\'c5\'cd
+\f0  
+\f1 \'c0\'da\'b5\'bf
+\f0  
+\f1 \'b0\'bb\'bd\'c5
+\f0 (ms)\
+   ex) refetchInterval: 10000  // 10
+\f1 \'c3\'ca\'b8\'b6\'b4\'d9
+\f0  
+\f1 \'b0\'bb\'bd\'c5
+\f0 \
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+\
+1. URL Parameter\
+   - 
+\f1 \'b5\'b6\'b8\'b3\'c0\'fb\'c0\'ce
+\f0  
+\f1 \'b0\'ed\'c0\'af
+\f0  
+\f1 \'c6\'e4\'c0\'cc\'c1\'f6
+\f0 / 
+\f1 \'c1\'d6\'bc\'d2\'b8\'a6
+\f0  
+\f1 \'b0\'a1\'c1\'ae\'be\'df
+\f0  
+\f1 \'c7\'d2
+\f0  
+\f1 \'b6\'a7
+\f0 \
+   ex) http://localhost:3000/react-query-01/1\
+\
+2. Query String\
+   - 
+\f1 \'b1\'e2\'c1\'b8
+\f0  
+\f1 \'c6\'e4\'c0\'cc\'c1\'f6
+\f0  
+\f1 \'be\'c8\'bf\'a1\'bc\'ad
+\f0  
+\f1 \'c7\'ca\'c5\'cd\'b8\'b5
+\f0 , 
+\f1 \'b0\'cb\'bb\'f6
+\f0 , 
+\f1 \'c1\'a4\'b7\'c4
+\f0 , 
+\f1 \'c5\'c7
+\f0  
+\f1 \'bb\'f3\'c5\'c2
+\f0  
+\f1 \'b5\'ee
+\f0  
+\f1 \'ba\'ce\'b0\'a1
+\f0  
+\f1 \'c1\'b6\'b0\'c7\'c0\'bb
+\f0  
+\f1 \'b9\'d9\'b2\'d9\'b0\'ed
+\f0  
+\f1 \'bd\'cd\'c0\'bb
+\f0  
+\f1 \'b6\'a7
+\f0 \
+	- 
+\f1 \'b0\'b3\'bd\'c3\'c6\'c7
+\f0  
+\f1 \'b8\'f1\'b7\'cf\'c0\'ba
+\f0   
+\f1 \'c0\'d6\'b0\'ed
+\f0  
+\f1 \'c3\'d6\'bd\'c5\'bc\'f8\'c0\'b8\'b7\'ce
+\f0  
+\f1 \'c7\'d2\'8b\'9a
+\f0  \
+   ex) http://localhost:3000/react-query-01/read?id=1\
+\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+Next
+\f1 \'c0\'c7
+\f0  Image\
+   1) 
+\f1 \'c0\'da\'b5\'bf
+\f0  
+\f1 \'c3\'d6\'c0\'fb\'c8\'ad
+\f0  
+\f1 \'b9\'d7
+\f0  
+\f1 \'c6\'f7\'b8\'cb
+\f0  
+\f1 \'ba\'af\'c8\'af
+\f0  (Optimization)\
+   - 
+\f1 \'c0\'cc\'b9\'cc\'c1\'f6\'b8\'a6
+\f0  
+\f1 \'ba\'ea\'b6\'f3\'bf\'ec\'c0\'fa\'b0\'a1
+\f0  
+\f1 \'c1\'f6\'bf\'f8\'c7\'cf\'b4\'c2
+\f0  
+\f1 \'b0\'a1\'c0\'e5
+\f0  
+\f1 \'b0\'a1\'ba\'ad\'bf\'ee
+\f0  
+\f1 \'c2\'f7\'bc\'bc\'b4\'eb
+\f0  
+\f1 \'c6\'f7\'b8\'cb
+\f0 (WebP, AVIF 
+\f1 \'b5\'ee
+\f0 )
+\f1 \'c0\'b8\'b7\'ce
+\f0  
+\f1 \'c0\'da\'b5\'bf
+\f0  
+\f1 \'ba\'af\'c8\'af\'c7\'d8
+\f0  
+\f1 \'c1\'dd\'b4\'cf\'b4\'d9
+\f0 .\
+   
+\f1 \'bf\'f8\'ba\'bb
+\f0  
+\f1 \'c0\'cc\'b9\'cc\'c1\'f6\'b0\'a1
+\f0  
+\f1 \'be\'c6\'b9\'ab\'b8\'ae
+\f0  
+\f1 \'c4\'bf\'b5\'b5
+\f0 , 
+\f1 \'bb\'e7\'bf\'eb\'c0\'da\'b0\'a1
+\f0  
+\f1 \'ba\'b8\'b4\'c2
+\f0  
+\f1 \'c8\'ad\'b8\'e9
+\f0  
+\f1 \'c5\'a9\'b1\'e2\'bf\'a1
+\f0  
+\f1 \'b8\'c2\'b0\'d4
+\f0  
+\f1 \'b8\'ae\'bb\'e7\'c0\'cc\'c2\'a1\'c7\'d8\'bc\'ad
+\f0  
+\f1 \'ba\'b8\'b3\'bb\'c1\'dd\'b4\'cf\'b4\'d9
+\f0 .\
+\
+   2) 
+\f1 \'b7\'b9\'c0\'cc\'be\'c6\'bf\'f4
+\f0  
+\f1 \'b2\'dc\'b7\'b7\'c0\'d3
+\f0  
+\f1 \'b9\'e6\'c1\'f6
+\f0  (CLS 
+\f1 \'b9\'e6\'c1\'f6
+\f0 )\
+   - 
+\f1 \'c0\'cf\'b9\'dd
+\f0  <img>
+\f1 \'b4\'c2
+\f0  
+\f1 \'c0\'cc\'b9\'cc\'c1\'f6\'b0\'a1
+\f0  
+\f1 \'b4\'d9
+\f0  
+\f1 \'ba\'d2\'b7\'af\'bf\'cd\'c1\'f6\'b1\'e2
+\f0  
+\f1 \'c0\'fc\'b1\'ee\'c1\'f6
+\f0  
+\f1 \'c5\'a9\'b1\'e2\'b8\'a6
+\f0  
+\f1 \'b8\'f4\'b6\'f3
+\f0  
+\f1 \'c8\'ad\'b8\'e9\'c0\'cc
+\f0  
+\f1 \'be\'c6\'b7\'a1\'b7\'ce
+\f0  
+\f1 \'c5\'f6
+\f0  
+\f1 \'b9\'d0\'b8\'ae\'b4\'c2
+\f0  
+\f1 \'c7\'f6\'bb\'f3\'c0\'cc
+\f0  
+\f1 \'b9\'df\'bb\'fd\'c7\'d5\'b4\'cf\'b4\'d9
+\f0 .\
+   Next.js Image
+\f1 \'b4\'c2
+\f0  width
+\f1 \'bf\'cd
+\f0  height(
+\f1 \'b6\'c7\'b4\'c2
+\f0  fill)
+\f1 \'b8\'a6
+\f0  
+\f1 \'c1\'f6\'c1\'a4\'c7\'d8
+\f0  
+\f1 \'b9\'cc\'b8\'ae
+\f0  
+\f1 \'b0\'f8\'b0\'a3\'c0\'bb
+\f0  
+\f1 \'c8\'ae\'ba\'b8\'c7\'cf\'b9\'c7\'b7\'ce
+\f0  
+\f1 \'c8\'ad\'b8\'e9\'c0\'cc
+\f0  
+\f1 \'b4\'fa\'c4\'c8\'b0\'c5\'b8\'ae\'c1\'f6
+\f0  
+\f1 \'be\'ca\'bd\'c0\'b4\'cf\'b4\'d9
+\f0 .\
+\
+   3) 
+\f1 \'c1\'f6\'bf\'ac
+\f0  
+\f1 \'b7\'ce\'b5\'f9
+\f0  (Lazy Loading 
+\f1 \'b1\'e2\'ba\'bb
+\f0  
+\f1 \'c0\'fb\'bf\'eb
+\f0 )\
+   - 
+\f1 \'bb\'e7\'bf\'eb\'c0\'da\'c0\'c7
+\f0  
+\f1 \'b4\'ab\'bf\'a1
+\f0  
+\f1 \'ba\'b8\'c0\'cc\'b4\'c2
+\f0  
+\f1 \'c8\'ad\'b8\'e9
+\f0 (Viewport)
+\f1 \'bf\'a1
+\f0  
+\f1 \'b5\'e9\'be\'ee\'bf\'c0\'b1\'e2
+\f0  
+\f1 \'c0\'fc\'b1\'ee\'c1\'f6\'b4\'c2
+\f0  
+\f1 \'c0\'cc\'b9\'cc\'c1\'f6\'b8\'a6
+\f0  
+\f1 \'be\'c6\'bf\'b9
+\f0  
+\f1 \'b7\'ce\'b5\'e5\'c7\'cf\'c1\'f6
+\f0  
+\f1 \'be\'ca\'bd\'c0\'b4\'cf\'b4\'d9
+\f0 . 
+\f1 \'c3\'ca\'b1\'e2
+\f0  
+\f1 \'c6\'e4\'c0\'cc\'c1\'f6
+\f0  
+\f1 \'b7\'ce\'b5\'f9
+\f0  
+\f1 \'bc\'d3\'b5\'b5\'b0\'a1
+\f0  
+\f1 \'c8\'b9\'b1\'e2\'c0\'fb\'c0\'b8\'b7\'ce
+\f0  
+\f1 \'bb\'a1\'b6\'f3\'c1\'fd\'b4\'cf\'b4\'d9
+\f0 .\
+\
+   4) 
+\f1 \'ba\'ed\'b7\'af
+\f0  
+\f1 \'c8\'bf\'b0\'fa
+\f0  (Placeholder Blur)\
+   - 
+\f1 \'c0\'cc\'b9\'cc\'c1\'f6\'b0\'a1
+\f0  
+\f1 \'b7\'ce\'b5\'f9\'b5\'c7\'b4\'c2
+\f0  
+\f1 \'b5\'bf\'be\'c8
+\f0  
+\f1 \'c0\'fa\'c7\'d8\'bb\'f3\'b5\'b5
+\f0  
+\f1 \'ba\'ed\'b7\'af
+\f0  
+\f1 \'c0\'cc\'b9\'cc\'c1\'f6\'b8\'a6
+\f0  
+\f1 \'b8\'d5\'c0\'fa
+\f0  
+\f1 \'ba\'b8\'bf\'a9\'c1\'d6\'be\'ee
+\f0  
+\f1 \'b7\'ce\'b5\'f9
+\f0  
+\f1 \'c3\'bc\'b0\'a8
+\f0  
+\f1 \'bc\'d3\'b5\'b5\'b8\'a6
+\f0  
+\f1 \'c1\'d9\'bf\'a9\'c1\'dd\'b4\'cf\'b4\'d9
+\f0 .\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+memoization\
+   - 
+\f1 \'c7\'d4\'bc\'f6\'c7\'fc
+\f0  
+\f1 \'c4\'c4\'c6\'f7\'b3\'cd\'c6\'ae\'bf\'a1\'bc\'ad
+\f0  
+\f1 \'b4\'d9\'b8\'a5
+\f0  
+\f1 \'ba\'af\'c8\'ad
+\f0  
+\f1 \'b6\'a7\'b9\'ae\'bf\'a1
+\f0  
+\f1 \'bf\'ac\'bb\'ea\'c0\'cc
+\f0  
+\f1 \'b5\'c7\'b4\'c2
+\f0  
+\f1 \'ba\'d2\'c7\'ca\'bf\'e4\'c7\'d1
+\f0  
+\f1 \'bf\'ac\'bb\'ea\'c0\'bb
+\f0  
+\f1 \'be\'c8\'c7\'cf\'b0\'d4
+\f0  
+\f1 \'c7\'cf\'b1\'e2\'c0\'a7\'c7\'d8
+\f0  
+\f1 \'bb\'e7\'bf\'eb\'c7\'d1\'b4\'d9
+\f0 .\
+\
+useMemo
+\f1 \'b6\'f5
+\f0 ?\
+   - useMemo
+\f1 \'b4\'c2
+\f0  
+\f1 \'b8\'de\'b8\'f0\'b8\'ae\'bf\'a1
+\f0  
+\f1 \'c0\'d6\'b4\'c2
+\f0  
+\f1 \'c4\'b3\'bd\'c3\'b8\'a6
+\f0  
+\f1 \'bb\'e7\'bf\'eb\'c7\'cf\'b4\'c2
+\f0  
+\f1 \'c7\'d4\'bc\'f6
+\f0 \
+   - 
+\f1 \'c4\'b3\'bd\'c3\'bf\'a1
+\f0  
+\f1 \'c0\'d6\'b4\'c2
+\f0  
+\f1 \'b0\'cd\'c0\'bb
+\f0  
+\f1 \'be\'b4\'b4\'d9\'b4\'c2
+\f0  
+\f1 \'b0\'cd\'c0\'ba
+\f0  
+\f1 \'c3\'d6\'c3\'ca\'bf\'a1
+\f0  
+\f1 \'b8\'b6\'bf\'ee\'c6\'ae\'b8\'a6
+\f0  
+\f1 \'c7\'d2
+\f0  
+\f1 \'b6\'a7
+\f0  
+\f1 \'bf\'ac\'bb\'ea\'b0\'e1\'b0\'fa\'b8\'a6
+\f0  
+\f1 \'c4\'b3\'bd\'c3\'bf\'a1
+\f0  
+\f1 \'b4\'e3\'be\'c6\'b3\'f5\'b0\'ed
+\f0 \
+   
+\f1 \'b8\'ae\'b7\'a3\'b4\'f5\'b8\'b5
+\f0  
+\f1 \'c0\'d6\'c0\'bb
+\f0  
+\f1 \'b6\'a7
+\f0  
+\f1 \'c4\'b3\'bd\'c3\'bf\'cd
+\f0  
+\f1 \'b0\'e1\'b0\'fa\'b8\'a6
+\f0  
+\f1 \'ba\'f1\'b1\'b3\'c7\'cf\'b0\'ed
+\f0 , 
+\f1 \'b3\'bb\'b0\'a1
+\f0  
+\f1 \'bf\'f8\'c7\'cf\'b4\'c2
+\f0  
+\f1 \'b0\'aa\'c0\'c7
+\f0  
+\f1 \'ba\'af\'c8\'ad\'b8\'a6
+\f0  
+\f1 \'c1\'d9
+\f0  
+\f1 \'b6\'a7\'b8\'b8
+\f0  
+\f1 \'bf\'ac\'bb\'ea\'c0\'bb
+\f0  
+\f1 \'bc\'f6\'c7\'e0\'c7\'d1\'b4\'d9
+\f0 . \
+   
+\f1 \'c0\'cc\'b0\'cd\'c0\'bb
+\f0  memoization
+\f1 \'c0\'cc\'b6\'f3\'b0\'ed
+\f0  
+\f1 \'c7\'d1\'b4\'d9
+\f0 .\
+\
+useCallback
+\f1 \'c0\'cc\'b6\'f5
+\f0 ?\
+   - 
+\f1 \'c7\'d4\'bc\'f6
+\f0  
+\f1 \'c0\'da\'c3\'bc\'b8\'a6
+\f0  
+\f1 \'b8\'de\'b8\'f0\'b8\'ae\'bf\'a1
+\f0  
+\f1 \'c4\'b3\'bd\'cc
+\f0 (
+\f1 \'c0\'fa\'c0\'e5
+\f0 )
+\f1 \'c7\'cf\'b4\'c2
+\f0  
+\f1 \'c8\'c5\'c0\'d4\'b4\'cf\'b4\'d9
+\f0 . 
+\f1 \'c0\'da\'b9\'d9\'bd\'ba\'c5\'a9\'b8\'b3\'c6\'ae\'bf\'a1\'bc\'ad
+\f0  
+\f1 \'c7\'d4\'bc\'f6\'b4\'c2
+\f0  
+\f1 \'b0\'b4\'c3\'bc
+\f0 (Object)
+\f1 \'c0\'c7
+\f0  
+\f1 \'c7\'d1
+\f0  
+\f1 \'c1\'be\'b7\'f9\'c0\'d4\'b4\'cf\'b4\'d9
+\f0 . \
+   
+\f1 \'c4\'c4\'c6\'f7\'b3\'cd\'c6\'ae\'b0\'a1
+\f0  
+\f1 \'b8\'ae\'b7\'bb\'b4\'f5\'b8\'b5\'b5\'c7\'b8\'e9
+\f0  
+\f1 \'b3\'bb\'ba\'ce\'c0\'c7
+\f0  
+\f1 \'c7\'d4\'bc\'f6\'b5\'e9\'c0\'ba
+\f0  
+\f1 \'c0\'cc\'b8\'a7\'c0\'cc
+\f0  
+\f1 \'b0\'b0\'be\'c6\'b5\'b5
+\f0  
+\f1 \'b8\'de\'b8\'f0\'b8\'ae\'bb\'f3\'bf\'a1\'bc\'ad
+\f0  
+\f1 \'bb\'f5\'b7\'ce\'bf\'ee
+\f0  
+\f1 \'c1\'d6\'bc\'d2\'b0\'aa\'c0\'bb
+\f0  
+\f1 \'b0\'a1\'c1\'f8
+\f0  '
+\f1 \'bb\'f5\'b7\'ce\'bf\'ee
+\f0  
+\f1 \'c7\'d4\'bc\'f6
+\f0 '
+\f1 \'b7\'ce
+\f0  
+\f1 \'b4\'d9\'bd\'c3
+\f0  
+\f1 \'b8\'b8\'b5\'e9\'be\'ee\'c1\'fd\'b4\'cf\'b4\'d9
+\f0 .\
+   
+\f1 \'c4\'b3\'bd\'c3\'bf\'a1
+\f0  
+\f1 \'c0\'d6\'b4\'c2
+\f0  
+\f1 \'b0\'cd\'c0\'bb
+\f0  
+\f1 \'be\'b4\'b4\'d9\'b4\'c2
+\f0  
+\f1 \'b0\'cd\'c0\'ba
+\f0  
+\f1 \'c3\'d6\'c3\'ca
+\f0  
+\f1 \'b8\'b6\'bf\'ee\'c6\'ae
+\f0 (
+\f1 \'b7\'bb\'b4\'f5\'b8\'b5
+\f0 )
+\f1 \'b5\'c9
+\f0  
+\f1 \'b6\'a7
+\f0  
+\f1 \'b8\'b8\'b5\'e9\'be\'ee\'c1\'f8
+\f0  
+\f1 \'c7\'d4\'bc\'f6\'b8\'a6
+\f0  
+\f1 \'c4\'b3\'bd\'c3\'bf\'a1
+\f0  
+\f1 \'c0\'fa\'c0\'e5\'c7\'d8
+\f0  
+\f1 \'b5\'ce\'b0\'ed
+\f0 , \
+   
+\f1 \'b8\'ae\'b7\'a3\'b4\'f5\'b8\'b5\'c0\'cc
+\f0  
+\f1 \'c0\'cf\'be\'ee\'b3\'aa\'b5\'b5
+\f0  
+\f1 \'c0\'c7\'c1\'b8\'bc\'ba
+\f0  
+\f1 \'b9\'e8\'bf\'ad
+\f0 ([])
+\f1 \'bf\'a1
+\f0  
+\f1 \'c1\'f6\'c1\'a4\'c7\'d1
+\f0  
+\f1 \'b0\'aa\'c0\'cc
+\f0  
+\f1 \'b9\'d9\'b2\'ee\'c1\'f6
+\f0  
+\f1 \'be\'ca\'be\'d2\'b4\'d9\'b8\'e9
+\f0  
+\f1 \'bb\'f5\'b7\'ce
+\f0  
+\f1 \'b8\'b8\'b5\'e9\'c1\'f6
+\f0  
+\f1 \'be\'ca\'b0\'ed
+\f0  \
+   
+\f1 \'c4\'b3\'bd\'c3\'bf\'a1
+\f0  
+\f1 \'c0\'d6\'b4\'c2
+\f0  
+\f1 \'b1\'e2\'c1\'b8
+\f0  
+\f1 \'c7\'d4\'bc\'f6
+\f0  
+\f1 \'c1\'d6\'bc\'d2\'b8\'a6
+\f0  
+\f1 \'b1\'d7\'b4\'eb\'b7\'ce
+\f0  
+\f1 \'c0\'e7\'bb\'e7\'bf\'eb\'c7\'cf\'b4\'c2
+\f0  
+\f1 \'b0\'cd\'c0\'bb
+\f0  
+\f1 \'c0\'c7\'b9\'cc\'c7\'d5\'b4\'cf\'b4\'d9
+\f0 .\
+\
+\
+}
